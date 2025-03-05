@@ -15,12 +15,12 @@
         }
         .fade-up {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transdiv: translateY(20px);
+            transition: opacity 0.6s ease-out, transdiv 0.6s ease-out;
         }
         .fade-up.visible {
             opacity: 1;
-            transform: translateY(0);
+            transdiv: translateY(0);
         }
         .terminal {
             background-color: white;
@@ -135,7 +135,7 @@
                 <p class="mb-8 max-w-xl text-gray-300" id="join">
                     Reach new audiences with AI-driven insights and automation. <b>Enter your email address below to try LeadsAutopilot Pro FREE for 7 days.</b>
                 </p>
-                <form class="flex space-x-4 mb-4" method="post">
+                <div class="flex space-x-4 mb-4" method="post">
                     <input type="email" name="email" placeholder="Enter your email" class="px-5 py-3 rounded-md w-96 text-black" required>
                     <a href="https://whop.com/checkout/plan_xGCwOvuiCEzbh?d2c=true">
                         <button type="submit" class="px-6 py-2 bg-gradient-to-r from-blue-400 to-blue-600 hover:bg-purple-500 rounded-md font-semibold shadow-lg hover:shadow-xl transition ease-in-out flex items-center space-x-2">
@@ -143,7 +143,7 @@
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </button>
                     </a>
-                </form>
+                </div>
                 <div class="flex space-x-4 text-gray-300">
                     <div class="flex items-center space-x-2">
                         <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -159,7 +159,7 @@
                     </div>
                 </div>
             </div>
-            <div class="w-1/3 transform hover:scale-105 transition-transform">
+            <div class="w-1/3 transdiv hover:scale-105 transition-transdiv">
                 <div class="terminal">
                     <div class="terminal-header">LeadsAutopilot Pro ></div>
                     <div id="terminal-content"></div>
@@ -229,7 +229,7 @@
             </div>
 
             <div class="text-center mt-8 w-2/3 m-auto">
-                <form class="flex space-x-4 mb-4" method="post">
+                <div class="flex space-x-4 mb-4" method="post">
                     <input type="email" name="email" placeholder="Enter your email" class="px-5 py-3 rounded-md bg-gray-100 w-full" required>
                     <a href="https://whop.com/checkout/plan_xGCwOvuiCEzbh?d2c=true">
                         <button type="submit" class="px-6 py-2 text-white bg-gradient-to-r from-blue-400 to-blue-600 hover:bg-purple-500 rounded-md font-semibold shadow-lg hover:shadow-xl transition ease-in-out flex items-center space-x-2">
@@ -237,7 +237,7 @@
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </button>
                     </a>
-                </form>
+                </div>
             </div>
         </div>
     </section>
