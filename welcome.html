@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to LeadsAutopilot!</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #24292e;
+            background-color: #f5f7fa;
+            background-image: linear-gradient(180deg, #f0f5ff 0%, #f8fafc 100%);
+            background-attachment: fixed;
+        }
+        .heading {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+            background: linear-gradient(90deg, #0047ff, #00a5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(0, 71, 255, 0.08);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .section-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #0047ff, #00a5ff);
+        }
+        .step-number {
+            background: linear-gradient(135deg, #0047ff, #00a5ff);
+            color: white;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-right: 1.25rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 71, 255, 0.2);
+        }
+        .link-style {
+            color: #0047ff;
+            font-weight: 500;
+            text-decoration: underline;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+        }
+        .link-style:hover {
+            color: #0039cc;
+        }
+        .link-style i {
+            margin-left: 0.25rem;
+            font-size: 0.875rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #0047ff, #00a5ff);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 6px -1px rgba(0, 71, 255, 0.2);
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0039cc, #0090e0);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px -2px rgba(0, 71, 255, 0.25);
+        }
+        .connection-option {
+            transition: all 0.2s;
+            padding: 1.25rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+        .connection-option:hover {
+            background-color: rgba(0, 71, 255, 0.03);
+        }
+        pre {
+            border: 1px dashed rgba(0, 71, 255, 0.2);
+        }
+        .divider {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(90deg, rgba(0, 71, 255, 0.05), rgba(0, 71, 255, 0.2) 50%, rgba(0, 71, 255, 0.05));
+            margin: 2rem 0;
+        }
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(135deg, rgba(0, 71, 255, 0.1), rgba(0, 165, 255, 0.1));
+            border-radius: 50%;
+            margin-right: 1rem;
+            color: #0047ff;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+
+        <div class="text-center mb-12">
+            <img src="/images/leadsautopilot-pro-logo-black.png" alt="LeadsAutopilot Logo" class="h-14 mx-auto mb-6">
+            <h1 class="heading mb-4">Welcome to LeadsAutopilot!</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Let's get you started on automating your LinkedIn growth and generating high-quality leads with our powerful platform.</p>
+        </div>
+
+        <!-- Step 1: Connect Account -->
+        <div class="section-card">
+            <div class="flex items-center mb-6">
+                <span class="step-number">1</span>
+                <h2 class="text-2xl font-semibold">Connect Your LinkedIn Account</h2>
+            </div>
+            <p class="text-gray-700 mb-6">Choose the connection method that works best for you:</p>
+            
+            <div class="connection-option mb-8 pb-8 border-b border-gray-200">
+                <div class="flex items-center mb-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="text-lg font-medium">Recommended: Password & Secret Key</h3>
+                </div>
+                <p class="text-gray-600 mb-4 pl-12">Prevents logouts and ensures smooth, uninterrupted growth. This is the most reliable method for consistent results.</p>
+                <div class="pl-12 flex flex-wrap items-center gap-4">
+                    <a href="/connection-steps" class="link-style">
+                        <i class="fas fa-play-circle mr-2"></i> View Connection Steps Video
+                    </a>
+                    <div class="divider hidden md:block w-px h-6 bg-gray-300 mx-2"></div>
+                    <a href="https://whop.com/leadsautopilot/help-desk-connect-your-linked-in-account-8c4pV9of5df7FC/app/" target="_blank" class="btn-primary text-sm !px-4 !py-2">
+                        <i class="fas fa-headset mr-2"></i> Open Secure Help Desk Ticket
+                    </a>
+                </div>
+                <div class="mt-6 pl-12">
+                    <p class="text-gray-500 text-sm mb-2"><i class="fas fa-info-circle mr-1"></i> Please include the following in your ticket:</p>
+                    <pre class="bg-gray-50 p-3 rounded-lg text-sm text-gray-700 mt-1 block w-full md:w-2/3">LinkedIn email:
+LinkedIn password:
+LinkedIn 2FA Secret Key (if enabled):</pre>
+                </div>
+            </div>
+            
+            <div class="connection-option">
+                <div class="flex items-center mb-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-lg font-medium">Passwordless: LeadsAutopilot Connect Extension</h3>
+                </div>
+                <p class="text-gray-600 mb-4 pl-12">Connect securely without providing your password using our browser extension.</p>
+                <div class="pl-12 flex flex-wrap items-center gap-4">
+                    <a href="/passwordless" class="link-style">
+                        <i class="fas fa-puzzle-piece mr-2"></i> View Passwordless Steps
+                    </a>
+                    <div class="divider hidden md:block w-px h-6 bg-gray-300 mx-2"></div>
+                    <a href="https://whop.com/leadsautopilot/help-desk-connect-your-linked-in-account-8c4pV9of5df7FC/app/" target="_blank" class="btn-primary text-sm !px-4 !py-2">
+                        <i class="fas fa-headset mr-2"></i> Open Secure Help Desk Ticket
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Book Onboarding -->
+        <div class="section-card">
+            <div class="flex items-center mb-6">
+                <span class="step-number">2</span>
+                <h2 class="text-2xl font-semibold">Book Your FREE Onboarding Call</h2>
+            </div>
+            
+            <div class="flex flex-wrap md:flex-nowrap gap-6 mb-6">
+                <div class="w-full md:w-1/3">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-chart-line text-blue-500 mr-2"></i>
+                            <h4 class="font-medium">Higher Success Rate</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Users who complete onboarding see 3x better results on average.</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-user-friends text-blue-500 mr-2"></i>
+                            <h4 class="font-medium">Personalized Strategy</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Get a customized plan tailored to your specific industry and goals.</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-gift text-blue-500 mr-2"></i>
+                            <h4 class="font-medium">100% Free</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">This premium service is included with your membership at no extra cost.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-gray-700 mb-4">Most users see significantly more success after their onboarding call. It's more than just an introduction – we'll work with you to ensure you get the most out of your membership and see real results, faster.</p>
+
+            <!-- Calendly inline widget begin -->
+            <div class="rounded-lg overflow-hidden shadow-lg border border-gray-100">
+                <div class="calendly-inline-widget" data-url="https://calendly.com/colddm/leadsautopilot-pro-onboarding-call" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
+            <!-- Calendly inline widget end -->
+        </div>
+
+        <!-- Step 3: What to Expect -->
+        <div class="section-card">
+            <div class="flex items-center mb-6">
+                <span class="step-number">3</span>
+                <h2 class="text-2xl font-semibold">What Happens Next?</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="bg-gradient-to-br from-white to-blue-50 p-5 rounded-lg shadow-sm border border-blue-100">
+                    <div class="text-blue-500 mb-3">
+                        <i class="fas fa-robot text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-medium mb-2">Week 1: Starting Up</h4>
+                    <p class="text-gray-600 text-sm">Your account gets connected and our system begins reaching out to targeted prospects.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-white to-blue-50 p-5 rounded-lg shadow-sm border border-blue-100">
+                    <div class="text-blue-500 mb-3">
+                        <i class="fas fa-chart-bar text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-medium mb-2">Week 2: Building Momentum</h4>
+                    <p class="text-gray-600 text-sm">Your activity increases as connections accept and our AI starts engaging with your new network.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-white to-blue-50 p-5 rounded-lg shadow-sm border border-blue-100">
+                    <div class="text-blue-500 mb-3">
+                        <i class="fas fa-handshake text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-medium mb-2">Week 3+: Full Automation</h4>
+                    <p class="text-gray-600 text-sm">Your LinkedIn network grows steadily with qualified leads and potential clients.</p>
+                </div>
+            </div>
+            
+            <p class="text-gray-700">Once your account is connected and configured (either by yourself or after your onboarding call), you're all set! Our system will handle everything automatically.</p>
+            <p class="text-gray-700 mt-3">Over the next week, you should start seeing activity on your LinkedIn profile ramp up as LeadsAutopilot begins working its magic. Keep an eye on your connection requests and messages!</p>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="text-center mt-12 text-sm text-gray-500">
+            <p>&copy; {{ current_year }} LeadsAutopilot. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="/" class="hover:underline mx-2"><i class="fas fa-home mr-1"></i> Home</a> |
+                <a href="https://app.leadsautopilot.com/login" class="hover:underline mx-2"><i class="fas fa-sign-in-alt mr-1"></i> Login</a> |
+                <a href="https://whop.com/leadsautopilot/help-desk/" class="hover:underline mx-2"><i class="fas fa-question-circle mr-1"></i> Support</a>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // Replace year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            document.body.innerHTML = document.body.innerHTML.replace(/{{ current_year }}/g, currentYear);
+        });
+    </script>
+</body>
+</html> 

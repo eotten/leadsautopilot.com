@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecting Your LinkedIn Account - LeadsAutopilot</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #24292e;
+            background-color: #f5f7fa;
+            background-image: linear-gradient(180deg, #f0f5ff 0%, #f8fafc 100%);
+            background-attachment: fixed;
+        }
+        .heading {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+            background: linear-gradient(90deg, #0047ff, #00a5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .back-link {
+            color: #0047ff;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.2s;
+        }
+        .back-link:hover {
+            color: #0039cc;
+            transform: translateX(-3px);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #0047ff, #00a5ff);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 6px -1px rgba(0, 71, 255, 0.2);
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0039cc, #0090e0);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px -2px rgba(0, 71, 255, 0.25);
+        }
+        .card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(0, 71, 255, 0.08);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, rgba(0, 71, 255, 0.1), rgba(0, 165, 255, 0.1));
+            border-radius: 50%;
+            margin-right: 1rem;
+            color: #0047ff;
+            font-size: 1.25rem;
+        }
+        .steps-indicator {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        .steps-indicator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 3rem;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, #0047ff, #00a5ff);
+            transform: translateX(-50%);
+        }
+        .step {
+            position: relative;
+            padding-left: 4.5rem;
+            margin-bottom: 2rem;
+        }
+        .step-marker {
+            position: absolute;
+            left: 3rem;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: white;
+            border: 2px solid #0047ff;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0047ff;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+
+        <div class="mb-8">
+            <a href="/welcome" class="back-link">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Welcome Steps
+            </a>
+        </div>
+
+        <div class="text-center mb-12">
+            <img src="/images/leadsautopilot-pro-logo-black.png" alt="LeadsAutopilot Logo" class="h-14 mx-auto mb-6">
+            <h1 class="heading mb-4">Connecting with Password & Secret Key</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Follow the steps in this video to connect your LinkedIn account using the recommended method.</p>
+        </div>
+
+        <!-- Key features -->
+        <div class="flex flex-wrap md:flex-nowrap gap-6 mb-10">
+            <div class="w-full md:w-1/3">
+                <div class="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-shield-alt text-blue-500 mr-2"></i>
+                        <h4 class="font-medium">Secure Connection</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Your information is encrypted and securely stored.</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3">
+                <div class="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-bolt text-blue-500 mr-2"></i>
+                        <h4 class="font-medium">Uninterrupted Growth</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Prevents logouts to ensure continuous automation.</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3">
+                <div class="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-rocket text-blue-500 mr-2"></i>
+                        <h4 class="font-medium">Better Results</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">This method provides the most consistent performance.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- YouTube Embed -->
+        <div class="card mb-10">
+            <div class="flex items-center mb-6">
+                <div class="feature-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+                <h2 class="text-2xl font-semibold">Watch the Connection Guide</h2>
+            </div>
+            <p class="text-gray-600 mb-6">This video walks you through each step of the connection process:</p>
+            <div class="video-container mb-8">
+                <iframe 
+                    src="https://www.youtube.com/embed/d4z4gX8YIW4" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <div class="mt-8 steps-indicator">
+                <h3 class="text-lg font-semibold mb-4">Quick Steps Summary:</h3>
+                <div class="step">
+                    <div class="step-marker">1</div>
+                    <h4 class="font-medium mb-1">Log in to your LinkedIn account</h4>
+                    <p class="text-sm text-gray-600">Make sure you're logged into the LinkedIn account you wish to connect</p>
+                </div>
+                <div class="step">
+                    <div class="step-marker">2</div>
+                    <h4 class="font-medium mb-1">Generate Secret Key</h4>
+                    <p class="text-sm text-gray-600">If you have 2FA enabled, generate a Secret Key from your LinkedIn settings</p>
+                </div>
+                <div class="step">
+                    <div class="step-marker">3</div>
+                    <h4 class="font-medium mb-1">Submit Your Login Details</h4>
+                    <p class="text-sm text-gray-600">Provide your email, password, and if applicable, 2FA Secret Key</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Desk Section -->
+        <div class="card text-center">
+            <div class="flex items-center justify-center mb-6">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h2 class="text-2xl font-semibold">Need Help Connecting?</h2>
+            </div>
+            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">If you prefer our team to handle the connection for you, simply submit your details securely via our Help Desk. We'll get your account connected quickly and efficiently.</p>
+            <a href="https://whop.com/leadsautopilot/help-desk-connect-your-linked-in-account-8c4pV9of5df7FC/app/" target="_blank" class="btn-primary !px-6 !py-3 mb-6">
+                <i class="fas fa-ticket-alt mr-2"></i> Open Secure Help Desk Ticket
+            </a>
+            <div class="max-w-lg mx-auto bg-blue-50 p-4 rounded-lg border border-blue-100 text-left">
+                <p class="text-gray-700 font-medium mb-2"><i class="fas fa-info-circle text-blue-500 mr-2"></i> Please include the following in your ticket:</p>
+                <pre class="bg-white p-4 rounded-lg text-sm text-gray-700 mt-2 border border-blue-100">LinkedIn email:
+LinkedIn password:
+LinkedIn 2FA Secret Key (if enabled):</pre>
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="text-center mt-12 text-sm text-gray-500">
+            <p>&copy; {{ current_year }} LeadsAutopilot. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="/" class="hover:underline mx-2"><i class="fas fa-home mr-1"></i> Home</a> |
+                <a href="https://app.leadsautopilot.com/login" class="hover:underline mx-2"><i class="fas fa-sign-in-alt mr-1"></i> Login</a> |
+                <a href="https://whop.com/leadsautopilot/help-desk/" class="hover:underline mx-2"><i class="fas fa-question-circle mr-1"></i> Support</a>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // Replace year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            document.body.innerHTML = document.body.innerHTML.replace(/{{ current_year }}/g, currentYear);
+        });
+    </script>
+</body>
+</html> 
