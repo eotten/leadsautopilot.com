@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcomfy - LinkedIn Welcome Message Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #24292e;
+        }
+        .heading {
+            font-size: 5rem;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+        .subheading {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 1.5rem auto;
+        }
+        .btn-primary {
+            background-color: #f97316;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #ea580c;
+        }
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #f97316;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.2s;
+            border: 1px solid #f97316;
+        }
+        .btn-secondary:hover {
+            background-color: #fff8f3;
+        }
+        .nav-link {
+            color: #4b5563;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+        .nav-link:hover {
+            color: #111827;
+        }
+        .banner-primary {
+            background-color: #f97316;
+        }
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-6">
+        <!-- Navigation -->
+        <nav class="flex justify-between items-center mb-12 bg-white rounded-full shadow-md py-3 px-6">
+            <div>
+                <div class="flex items-center">
+                    <svg class="w-8 h-8 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-xl font-bold">Welcomfy</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-4">
+                <a href="#features" class="nav-link">Benefits</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#results" class="nav-link">Results</a>
+            </div>
+            <div class="flex space-x-4 items-center">
+                <a href="https://app.leadsautopilot.com?utm_source=welcomfy&utm_content=header-login" class="nav-link">Log In</a>
+                <a href="https://app.leadsautopilot.com/join?utm_source=welcomfy&utm_content=header-start" class="btn-primary">Start Free</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="relative mt-10 mb-16">
+            <div class="text-center fade-up">
+                <h1 class="heading">Grow your LinkedIn network,<br>on autopilot</h1>
+                <p class="subheading">Automatically send messages to new LinkedIn followers and connections to build deep, meaningful connections with ease.</p>
+                
+                <div class="mt-12">
+                    <a href="https://app.leadsautopilot.com/join?utm_source=welcomfy&utm_content=hero-start" class="btn-primary text-lg px-10 py-4">Try for free</a>
+                </div>
+                
+                <div class="mt-10 flex justify-center items-center">
+                    <div class="flex space-x-2">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    </div>
+                    <p class="ml-3 text-gray-600"><a href="https://whop.com/leadsautopilot/" class="hover:text-orange-600 transition-colors">Rated 4.83/5 stars on Whop</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo/Preview Section -->
+        <div class="mt-16 max-w-6xl mx-auto fade-up">
+            <iframe class="md:w-3/4 mx-auto rounded-lg shadow-lg" height="500" src="https://www.youtube.com/embed/q-wL5pbrD6E?autoplay=1&mute=1" title="Welcomfy Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50" id="features">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-4xl font-bold mb-4">What Welcomfy Offers</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Automate your LinkedIn networking with personalized welcome messages</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow fade-up">
+                    <div class="text-orange-500 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Automatic Welcome Messages</h3>
+                    <p class="text-gray-600">Send personalized messages to new connections automatically, making a great first impression.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow fade-up" style="transition-delay: 0.2s;">
+                    <div class="text-orange-500 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">AI-Powered Personalization</h3>
+                    <p class="text-gray-600">Our AI analyzes profiles to create personalized messages that resonate with each new connection.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow fade-up" style="transition-delay: 0.4s;">
+                    <div class="text-orange-500 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Save Hours Every Week</h3>
+                    <p class="text-gray-600">Eliminate manual outreach and let our system build relationships for you while you focus on what matters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cloud Section -->
+    <section class="py-16 bg-gray-900 text-white" id="results">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-up">
+                    <img src="https://via.placeholder.com/600x400" alt="Cloud Automation" class="rounded-lg shadow-2xl">
+                </div>
+                <div class="md:w-1/2 md:pl-12 fade-up" style="transition-delay: 0.3s;">
+                    <h2 class="text-3xl font-bold mb-6">Cloud-Based Automation</h2>
+                    <p class="text-xl mb-6">That's not all, with LeadsAutopilot Pro, welcome messages are sent automatically in the cloud. No need to keep your computer running or browser open.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-orange-400 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Works 24/7 even when you're offline</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-orange-400 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Intelligent response detection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-orange-400 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Detailed analytics on message performance</span>
+                        </li>
+                    </ul>
+                    <a href="https://app.leadsautopilot.com/join?utm_source=welcomfy&utm_content=cloud-cta" class="inline-block bg-orange-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Banner Section -->
+    <section class="py-16 banner-primary text-white">
+        <div class="max-w-6xl mx-auto px-4 text-center fade-up">
+            <h2 class="text-3xl font-bold mb-6">Automate Your LinkedIn Networking</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Build meaningful relationships at scale without the manual work</p>
+            <a href="https://app.leadsautopilot.com/join?utm_source=welcomfy&utm_content=banner-start" class="inline-block btn-secondary px-8 py-4 text-lg">Get Started Now</a>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-100 text-gray-800">
+        <div class="max-w-6xl mx-auto px-4 fade-up">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2 text-orange-500">100%</div>
+                    <p class="text-gray-600">Automated</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2 text-orange-500">7</div>
+                    <p class="text-gray-600">Day Free Trial</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2 text-orange-500">3x</div>
+                    <p class="text-gray-600">Response Rate</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2 text-orange-500">1000s</div>
+                    <p class="text-gray-600">Happy Users</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Table -->
+    <section class="py-20 bg-gray-50" id="pricing">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose the plan that fits your networking needs</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Free Plan -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow flex flex-col border-t-4 border-gray-400 fade-up">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-2">Free - Extension</h3>
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-extrabold">$0</span>
+                            <span class="text-gray-500 ml-1">/ forever</span>
+                        </div>
+                        <p class="text-gray-600 mt-4">Basic welcome messages for casual networkers</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Basic welcome templates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-500">Manual installation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-500">No AI personalization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-500">No automatic growth</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-500">No AI LinkedIn post writer</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://chrome.google.com/webstore/category/extensions" class="block text-center btn-secondary py-3 px-4">Download for free</a>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow flex flex-col border-t-4 border-orange-500 relative transform md:scale-105 z-10 fade-up" style="transition-delay: 0.2s;">
+                    <div class="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">POPULAR</div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-2">Pro - Cloud Based</h3>
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-extrabold">$99</span>
+                            <span class="text-gray-500 ml-1">/ month</span>
+                        </div>
+                        <p class="text-gray-600 mt-4">For professionals who want to grow their network on autopilot</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span><strong>7-day free trial</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>AI personalized messages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Runs 24/7 in the cloud</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Includes autolike feature</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>2,500 AI credits</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://app.leadsautopilot.com/join?utm_source=welcomfy&utm_content=pricing-pro" class="block text-center btn-primary py-3 px-4 rounded-lg">Start 7-day free trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 fade-up">Ready to Grow Your LinkedIn Network?</h2>
+            <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto fade-up" style="transition-delay: 0.2s;">Start automating your welcome messages today and build meaningful connections at scale.</p>
+            
+            <div class="bg-gray-100 p-10 rounded-2xl max-w-3xl mx-auto fade-up" style="transition-delay: 0.3s;">
+                <h3 class="text-2xl font-bold mb-6">Get Started Today</h3>
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <input type="email" id="signup-email" placeholder="Enter your email address" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                    <a href="javascript:void(0)" onclick="redirectToJoin()" class="btn-primary px-6 py-3 inline-flex items-center justify-center">Start Free Trial</a>
+                </div>
+                <script>
+                    function redirectToJoin() {
+                        const email = document.getElementById('signup-email').value;
+                        const utmParams = new URLSearchParams(window.location.search);
+                        let joinUrl = 'join.html?utm_source=welcomfy&utm_content=cta-form';
+                        
+                        // Add any existing UTM parameters from browser
+                        for (const [key, value] of utmParams.entries()) {
+                            if (key.startsWith('utm_') && key !== 'utm_source' && key !== 'utm_content') {
+                                joinUrl += `&${key}=${value}`;
+                            }
+                        }
+                        
+                        // Add email parameter if available
+                        if (email) {
+                            joinUrl += `&email=${encodeURIComponent(email)}`;
+                        }
+                        
+                        window.location.href = joinUrl;
+                    }
+                </script>
+                <p class="text-sm text-gray-500 mt-4">No credit card required. Cancel anytime.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#results" class="text-gray-400 hover:text-white transition-colors">Results</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Integrations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://docs.leadsautopilot.com" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="https://docs.leadsautopilot.com/guides" class="text-gray-400 hover:text-white transition-colors">Guides</a></li>
+                        <li><a href="support.html" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                        <li><a href="https://status.leadsautopilot.com" class="text-gray-400 hover:text-white transition-colors">Status</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="https://blog.leadsautopilot.com" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms</a></li>
+                        <li><a href="privacy.html#security" class="text-gray-400 hover:text-white transition-colors">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center text-white">
+                        <svg class="w-8 h-8 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-xl font-bold">Welcomfy</span>
+                    </div>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    &copy; 2023 LeadsAutopilot Pro. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Animation for fade-up elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerWriter - LinkedIn Writing Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #24292e;
+        }
+        .heading {
+            font-size: 5rem;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+        .subheading {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 1.5rem auto;
+        }
+        .btn-primary {
+            background-color: #4f46e5;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #4338ca;
+        }
+        .nav-link {
+            color: #4b5563;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+        .nav-link:hover {
+            color: #111827;
+        }
+        .banner-primary {
+            background-color: #4f46e5;
+        }
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-6">
+        <!-- Navigation -->
+        <nav class="flex justify-between items-center mb-12">
+            <div>
+                <img src="/images/leadsautopilot-pro-logo-black.png" alt="LeadsAutopilot Logo" class="h-12">
+            </div>
+            <div class="hidden md:flex space-x-4">
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="https://docs.leadsautopilot.com" class="nav-link">Docs</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="https://blog.leadsautopilot.com" class="nav-link">Blog</a>
+            </div>
+            <div class="flex space-x-4 items-center">
+                <a href="https://app.leadsautopilot.com?utm_source=powerwriter&utm_content=header-login" class="nav-link">Log In</a>
+                <a href="https://app.leadsautopilot.com/join?utm_source=powerwriter&utm_content=header-start" class="btn-primary">Start writing</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="text-center mt-20 mb-16 fade-up">
+            <h1 class="heading">Meet Your LinkedIn<br>Writing Assistant</h1>
+            <p class="subheading">The AI-powered copywriter to help you ideate, write, and post with ease.</p>
+            
+            <div class="mt-12">
+                <a href="https://app.leadsautopilot.com/join?utm_source=powerwriter&utm_content=hero-start" class="btn-primary text-lg px-10 py-4">Start Writing - It's Free</a>
+            </div>
+            
+            <div class="mt-10 flex justify-center items-center">
+                <div class="flex space-x-2">
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                </div>
+                <p class="ml-3 text-gray-600"><a href="https://whop.com/leadsautopilot/" class="hover:text-blue-600 transition-colors">Rated 4.83/5 stars on Whop</a></p>
+            </div>
+        </div>
+
+        <!-- Demo/Preview Section -->
+        <div class="mt-16 max-w-6xl mx-auto fade-up">
+            <div class="bg-gray-100 rounded-xl p-6 shadow-lg">
+                <!-- Add your demo content here -->
+                <div class="flex">
+                    <div class="w-1/4 border-r border-gray-300 pr-4">
+                        <div class="mb-4">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full"></div>
+                                <p class="font-medium">John Smith</p>
+                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-center text-gray-700">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <span>AI Power Writer</span>
+                                </li>
+                                <li class="flex items-center text-blue-600 font-medium">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                    </svg>
+                                    <span>LinkedIn Posts</span>
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                    </svg>
+                                    <span>Autolikes</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="w-3/4 pl-6">
+                        <div class="border-b border-gray-300 pb-3 mb-4">
+                            <div class="flex space-x-4 mb-4">
+                                <button class="px-3 py-1 font-medium border-b-2 border-blue-500">All</button>
+                                <button class="px-3 py-1 font-medium text-gray-500">Trending</button>
+                                <button class="px-3 py-1 font-medium text-gray-500">Recent</button>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded p-4 shadow mb-4">
+                            <h3 class="font-medium mb-2">How to Connect with Senior Leaders on LinkedIn</h3>
+                            <p class="text-gray-600 text-sm">Started 2 days ago • 3 min read</p>
+                        </div>
+                        <div class="bg-white rounded p-4 shadow mb-4">
+                            <h3 class="font-medium mb-2">10 LinkedIn Post Ideas That Generate Engagement</h3>
+                            <p class="text-gray-600 text-sm">Started 1 week ago • 5 min read</p>
+                        </div>
+                        <div class="bg-white rounded p-4 shadow">
+                            <h3 class="font-medium mb-2">Personal Branding: Showcasing Your Expertise</h3>
+                            <p class="text-gray-600 text-sm">Started 2 weeks ago • 4 min read</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-4xl font-bold mb-4">Supercharge Your LinkedIn Presence</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">PowerWriter helps you create viral content in minutes, not hours.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow fade-up">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">AI-Powered Content Creation</h3>
+                    <p class="text-gray-600">Generate engaging posts with our advanced AI that understands what makes content go viral on LinkedIn.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow fade-up" style="transition-delay: 0.2s;">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Engagement Analytics</h3>
+                    <p class="text-gray-600">Track performance with detailed analytics to understand what resonates with your audience.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow fade-up" style="transition-delay: 0.4s;">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Content Calendar</h3>
+                    <p class="text-gray-600">Schedule posts for optimal times to maximize visibility and engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Banner Section -->
+    <section class="py-16 banner-primary text-white">
+        <div class="max-w-6xl mx-auto px-4 text-center fade-up">
+            <h2 class="text-3xl font-bold mb-6">Start with a 7-day free trial</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Try PowerWriter with 300 trial credits.</p>
+            <a href="https://app.leadsautopilot.com/join?utm_source=powerwriter&utm_content=banner-start" class="inline-block bg-white text-blue-600 font-semibold px-8 py-4 rounded-full text-lg hover:bg-gray-100 transition-colors">Get Started Now</a>
+        </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-4xl font-bold mb-4">How PowerWriter Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Three simple steps to LinkedIn content that performs</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/3 text-center px-6 mb-12 md:mb-0 fade-up">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-semibold mb-2">Choose Your Topic</h3>
+                    <p class="text-gray-600">Select from trending topics in your industry or input your own idea.</p>
+                </div>
+                
+                <div class="md:w-1/3 text-center px-6 mb-12 md:mb-0 fade-up" style="transition-delay: 0.2s;">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-semibold mb-2">Generate & Edit</h3>
+                    <p class="text-gray-600">Our AI creates engaging content that you can customize to match your voice.</p>
+                </div>
+                
+                <div class="md:w-1/3 text-center px-6 fade-up" style="transition-delay: 0.4s;">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-semibold mb-2">Post & Amplify</h3>
+                    <p class="text-gray-600">Schedule your post and let our Autolikes feature boost engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Autolikes Feature -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-up">
+                    <img src="https://via.placeholder.com/600x400" alt="Autolikes Feature" class="rounded-lg shadow-2xl">
+                </div>
+                <div class="md:w-1/2 md:pl-12 fade-up" style="transition-delay: 0.3s;">
+                    <h2 class="text-3xl font-bold mb-6">Boost Your Visibility with Autolikes</h2>
+                    <p class="text-xl mb-6">That's not all, once you post your content, our system will automatically engage with other creators in your niche to ensure it gets seen with our Autolikes feature.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-blue-400 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Automatic engagement with relevant content</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-blue-400 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Targeted interactions within your industry</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-blue-400 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Build a network of engaged professionals</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-4xl font-bold mb-4">What Our Users Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Join thousands of professionals who've transformed their LinkedIn presence</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="mr-4">
+                            <img src="https://via.placeholder.com/60" alt="User" class="w-12 h-12 rounded-full">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">Marketing Director</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"PowerWriter helped me increase my engagement by 300% in just two weeks. The content it generates feels authentic and resonates with my audience."</p>
+                    <div class="flex text-yellow-400">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md fade-up" style="transition-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <div class="mr-4">
+                            <img src="https://via.placeholder.com/60" alt="User" class="w-12 h-12 rounded-full">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Michael Chen</h4>
+                            <p class="text-gray-600 text-sm">Startup Founder</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"I was spending hours crafting LinkedIn posts with little return. PowerWriter + Autolikes changed the game. Now I spend 10 minutes and get 5x the results."</p>
+                    <div class="flex text-yellow-400">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md fade-up" style="transition-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <div class="mr-4">
+                            <img src="https://via.placeholder.com/60" alt="User" class="w-12 h-12 rounded-full">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Jessica Martinez</h4>
+                            <p class="text-gray-600 text-sm">Sales Executive</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"The quality of leads I'm getting has completely changed. I'm connecting with decision-makers who engage with my content first, making sales conversations so much easier."</p>
+                    <div class="flex text-yellow-400">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="py-16 banner-primary text-white">
+        <div class="max-w-6xl mx-auto px-4 fade-up">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2">300</div>
+                    <p class="text-blue-200">Trial Credits</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2">7</div>
+                    <p class="text-blue-200">Day Free Trial</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2">10x</div>
+                    <p class="text-blue-200">Engagement Increase</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-2">1000s</div>
+                    <p class="text-blue-200">Happy Users</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Table -->
+    <section class="py-20 bg-gray-50" id="pricing">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose the plan that fits your needs</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow flex flex-col border-t-4 border-blue-400 fade-up">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-2">Basic</h3>
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-extrabold">$17</span>
+                            <span class="text-gray-500 ml-1">/ month</span>
+                        </div>
+                        <p class="text-gray-600 mt-4">For individuals focusing on content creation</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span><strong>7-day free trial</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>300 trial credits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>300 credits per month after trial</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Full content creation features</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-500">No Autolikes feature</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://app.leadsautopilot.com/join?utm_source=powerwriter&utm_content=pricing-basic" class="block text-center bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">Start Free Trial</a>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow flex flex-col border-t-4 border-purple-500 relative transform md:scale-105 z-10 fade-up" style="transition-delay: 0.2s;">
+                    <div class="absolute top-0 right-0 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">POPULAR</div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-2">Pro</h3>
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-extrabold">$99</span>
+                            <span class="text-gray-500 ml-1">/ month</span>
+                        </div>
+                        <p class="text-gray-600 mt-4">For professionals who want maximum engagement</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span><strong>7-day free trial</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>300 trial credits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>2,500 credits per month after trial</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Includes Autolikes feature</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Advanced analytics & reporting</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://app.leadsautopilot.com/join?utm_source=powerwriter&utm_content=pricing-pro" class="block text-center bg-purple-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-purple-700 transition-colors">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 fade-up">Ready to Transform Your LinkedIn Presence?</h2>
+            <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto fade-up" style="transition-delay: 0.2s;">Both plans include a 7-day free trial with 300 credits to get you started. No obligation.</p>
+            
+            <div class="bg-gray-100 p-10 rounded-2xl max-w-3xl mx-auto fade-up" style="transition-delay: 0.3s;">
+                <h3 class="text-2xl font-bold mb-6">Get Started Today</h3>
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <input type="email" id="signup-email" placeholder="Enter your email address" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <a href="javascript:void(0)" onclick="redirectToJoin()" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center justify-center">Start Free Trial</a>
+                </div>
+                <script>
+                    function redirectToJoin() {
+                        const email = document.getElementById('signup-email').value;
+                        const utmParams = new URLSearchParams(window.location.search);
+                        let joinUrl = 'join.html?utm_source=powerwriter&utm_content=cta-form';
+                        
+                        // Add any existing UTM parameters from browser
+                        for (const [key, value] of utmParams.entries()) {
+                            if (key.startsWith('utm_') && key !== 'utm_source' && key !== 'utm_content') {
+                                joinUrl += `&${key}=${value}`;
+                            }
+                        }
+                        
+                        // Add email parameter if available
+                        if (email) {
+                            joinUrl += `&email=${encodeURIComponent(email)}`;
+                        }
+                        
+                        window.location.href = joinUrl;
+                    }
+                </script>
+                <p class="text-sm text-gray-500 mt-4">Cancel anytime.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="https://docs.leadsautopilot.com" class="text-gray-400 hover:text-white transition-colors">API</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Integrations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://docs.leadsautopilot.com" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="https://docs.leadsautopilot.com/guides" class="text-gray-400 hover:text-white transition-colors">Guides</a></li>
+                        <li><a href="support.html" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                        <li><a href="https://status.leadsautopilot.com" class="text-gray-400 hover:text-white transition-colors">API Status</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="https://blog.leadsautopilot.com" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms</a></li>
+                        <li><a href="privacy.html#security" class="text-gray-400 hover:text-white transition-colors">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <img src="/images/leadsautopilot-pro-logo.png" alt="LeadsAutopilot Logo" class="h-8">
+                </div>
+                <div class="text-gray-400 text-sm">
+                    &copy; 2023 LeadsAutopilot Pro. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Animation for fade-up elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html> 
