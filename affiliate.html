@@ -151,7 +151,7 @@
         <div class="text-center mb-12">
             <img src="/images/leadsautopilot-pro-logo-black.png" alt="LeadsAutopilot Logo" class="h-14 mx-auto mb-6">
             <h1 class="heading mb-4">LeadsAutopilot Affiliate Program</h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Join our affiliate program and earn generous commissions by referring businesses to LeadsAutopilot.</p>
+            <p class="text-2xl text-gray-600 max-w-2xl mx-auto font-bold">Help people grow their LinkedIn to land clients and get paid <50% recurring commissions on $99/mo!</p>
         </div>
 
         <!-- Step 1: Create a Whop Account -->
@@ -354,29 +354,19 @@
                     </div>
                     
                     <div class="mb-6">
-                        <label class="block text-gray-700 text-sm font-medium mb-2">Average Plan Price ($)</label>
-                        <input type="range" id="priceSlider" min="97" max="297" value="197" step="50" class="mb-2">
-                        <div class="flex justify-between">
-                            <span class="text-xs text-gray-500">$97</span>
-                            <span id="priceValue" class="text-sm font-medium text-blue-600">$197</span>
-                            <span class="text-xs text-gray-500">$297</span>
-                        </div>
+                        <p class="block text-gray-700 text-sm font-medium mb-1">Plan Price</p>
+                        <p class="text-xl font-semibold text-gray-800">$99 / month</p>
                     </div>
                     
                     <div class="mb-6">
-                        <label class="block text-gray-700 text-sm font-medium mb-2">Commission Rate (%)</label>
-                        <input type="range" id="commissionSlider" min="20" max="40" value="30" class="mb-2">
-                        <div class="flex justify-between">
-                            <span class="text-xs text-gray-500">20%</span>
-                            <span id="commissionValue" class="text-sm font-medium text-blue-600">30%</span>
-                            <span class="text-xs text-gray-500">40%</span>
-                        </div>
+                        <p class="block text-gray-700 text-sm font-medium mb-1">Commission Rate</p>
+                        <p class="text-xl font-semibold text-gray-800">50% Recurring</p>
                     </div>
                     
                     <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-4 mt-8">
                         <h4 class="font-medium text-gray-800 mb-2">Your Estimated Monthly Earnings</h4>
-                        <p id="monthlyEarnings" class="text-3xl font-bold text-blue-600">$295.50</p>
-                        <p id="yearlyEarnings" class="text-lg text-gray-700">$3,546 per year</p>
+                        <p id="monthlyEarnings" class="text-3xl font-bold text-blue-600">$247.50</p>
+                        <p id="yearlyEarnings" class="text-lg text-gray-700">$2,970 per year</p>
                     </div>
                 </div>
                 
@@ -411,18 +401,18 @@
                 </div>
 
                 <div>
-                    <h3 class="text-lg font-medium mb-2">What’s the cookie window?</h3>
+                    <h3 class="text-lg font-medium mb-2">What's the cookie window?</h3>
                     <p class="text-gray-700">30 days. Any purchase a prospect makes within 30 days of clicking your link earns you commission.</p>
                 </div>
 
                 <div>
                     <h3 class="text-lg font-medium mb-2">Can I promote LeadsAutopilot outside of LinkedIn?</h3>
-                    <p class="text-gray-700">Absolutely. While our ideal users are on LinkedIn, they’re active on other platforms too—feel free to reach them wherever they hang out.</p>
+                    <p class="text-gray-700">Absolutely. While our ideal users are on LinkedIn, they're active on other platforms too—feel free to reach them wherever they hang out.</p>
                 </div>
 
                 <div>
                     <h3 class="text-lg font-medium mb-2">Do you provide marketing materials?</h3>
-                    <p class="text-gray-700">Yes. Once you’re approved, you’ll find banners, product images, and swipe copy in your Whop dashboard—ready to post.</p>
+                    <p class="text-gray-700">Yes. Once you're approved, you'll find banners, product images, and swipe copy in your Whop dashboard—ready to post.</p>
                 </div>
             </div>
         </div>
@@ -453,37 +443,32 @@
         
         function initCalculator() {
             const referralsSlider = document.getElementById('referralsSlider');
-            const priceSlider = document.getElementById('priceSlider');
-            const commissionSlider = document.getElementById('commissionSlider');
             
             const referralsValue = document.getElementById('referralsValue');
-            const priceValue = document.getElementById('priceValue');
-            const commissionValue = document.getElementById('commissionValue');
             
             const monthlyEarnings = document.getElementById('monthlyEarnings');
             const yearlyEarnings = document.getElementById('yearlyEarnings');
             
+            const fixedPrice = 99;
+            const fixedCommission = 0.50; // 50%
+
             function updateCalculator() {
                 const referrals = parseInt(referralsSlider.value);
-                const price = parseInt(priceSlider.value);
-                const commission = parseInt(commissionSlider.value) / 100;
+                const price = fixedPrice;
+                const commission = fixedCommission;
                 
                 const monthly = referrals * price * commission;
                 const yearly = monthly * 12;
                 
                 referralsValue.textContent = referrals;
-                priceValue.textContent = '$' + price;
-                commissionValue.textContent = (commission * 100) + '%';
                 
                 monthlyEarnings.textContent = '$' + monthly.toFixed(2);
                 yearlyEarnings.textContent = '$' + yearly.toFixed(0) + ' per year';
                 
-                updateChart(referrals, price, commission);
+                updateChart(referrals);
             }
             
             referralsSlider.addEventListener('input', updateCalculator);
-            priceSlider.addEventListener('input', updateCalculator);
-            commissionSlider.addEventListener('input', updateCalculator);
             
             updateCalculator();
         }
@@ -492,7 +477,9 @@
         
         function initChart() {
             const ctx = document.getElementById('earningsChart').getContext('2d');
-            
+            const initialReferrals = 5;
+            const initialMonthlyEarnings = initialReferrals * 99 * 0.50; // Calculate initial value based on defaults
+
             earningsChart = new Chart(ctx, {
                 type: 'line',
                 data: {
@@ -506,7 +493,7 @@
                         pointRadius: 4,
                         tension: 0.3,
                         fill: true,
-                        data: [295.50, 295.50, 295.50, 295.50, 295.50, 295.50, 295.50, 295.50, 295.50, 295.50, 295.50, 295.50]
+                        data: Array(12).fill(initialMonthlyEarnings) // Use calculated initial value
                     }]
                 },
                 options: {
@@ -535,8 +522,10 @@
             });
         }
         
-        function updateChart(referrals, price, commission) {
-            const monthly = referrals * price * commission;
+        function updateChart(referrals) {
+            const fixedPrice = 99;
+            const fixedCommission = 0.50;
+            const monthly = referrals * fixedPrice * fixedCommission;
             
             // Create array with 12 elements all set to monthly value
             const data = Array(12).fill(monthly);
