@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadsAutopilot Affiliate Program</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #24292e;
+            background-color: #f5f7fa;
+            background-image: linear-gradient(180deg, #f0f5ff 0%, #f8fafc 100%);
+            background-attachment: fixed;
+        }
+        .heading {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+            background: linear-gradient(90deg, #0047ff, #00a5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(0, 71, 255, 0.08);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .section-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #0047ff, #00a5ff);
+        }
+        .step-number {
+            background: linear-gradient(135deg, #0047ff, #00a5ff);
+            color: white;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-right: 1.25rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 71, 255, 0.2);
+        }
+        .link-style {
+            color: #0047ff;
+            font-weight: 500;
+            text-decoration: underline;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+        }
+        .link-style:hover {
+            color: #0039cc;
+        }
+        .link-style i {
+            margin-left: 0.25rem;
+            font-size: 0.875rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #0047ff, #00a5ff);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 6px -1px rgba(0, 71, 255, 0.2);
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0039cc, #0090e0);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px -2px rgba(0, 71, 255, 0.25);
+        }
+        .divider {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(90deg, rgba(0, 71, 255, 0.05), rgba(0, 71, 255, 0.2) 50%, rgba(0, 71, 255, 0.05));
+            margin: 2rem 0;
+        }
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(135deg, rgba(0, 71, 255, 0.1), rgba(0, 165, 255, 0.1));
+            border-radius: 50%;
+            margin-right: 1rem;
+            color: #0047ff;
+        }
+        .calculator-card {
+            background-color: #f8fafc;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 71, 255, 0.1);
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #e2e8f0;
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0047ff, #00a5ff);
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 71, 255, 0.3);
+        }
+        .link-option {
+            border: 1px solid rgba(0, 71, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.2s;
+        }
+        .link-option:hover {
+            background-color: rgba(0, 71, 255, 0.03);
+            border-color: rgba(0, 71, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+
+        <div class="text-center mb-12">
+            <img src="/images/leadsautopilot-pro-logo-black.png" alt="LeadsAutopilot Logo" class="h-14 mx-auto mb-6">
+            <h1 class="heading mb-4">LeadsAutopilot Affiliate Program</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Join our affiliate program and earn generous commissions by referring businesses to LeadsAutopilot.</p>
+        </div>
+
+        <!-- Step 1: Create a Whop Account -->
+        <div class="section-card">
+            <div class="flex items-center mb-6">
+                <span class="step-number">1</span>
+                <h2 class="text-2xl font-semibold">Create a Whop Account</h2>
+            </div>
+            <p class="text-gray-700 mb-6">First, you'll need to create an account on Whop, our affiliate management platform:</p>
+            
+            <div class="flex flex-wrap md:flex-nowrap gap-6 mb-6">
+                <div class="w-full md:w-1/2">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                            <h4 class="font-medium">What is Whop?</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Whop is a trusted platform that handles our product sales and affiliate management. Your commissions will be tracked and paid through this platform.</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 h-full flex flex-col justify-between">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <h4 class="font-medium">Benefits of Whop</h4>
+                        </div>
+                        <ul class="text-sm text-gray-600 list-disc pl-5 mb-3">
+                            <li>Automatic commission tracking</li>
+                            <li>Reliable payment processing</li>
+                            <li>Easy-to-use dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center">
+                <a href="https://whop.com/signup" target="_blank" class="btn-primary">
+                    <i class="fas fa-user-plus mr-2"></i> Create Your Whop Account
+                </a>
+            </div>
+        </div>
+
+        <!-- Step 2: Add to Affiliates Dashboard -->
+        <div class="section-card">
+            <div class="flex items-center mb-6">
+                <span class="step-number">2</span>
+                <h2 class="text-2xl font-semibold">Join Our Affiliate Program</h2>
+            </div>
+            
+            <p class="text-gray-700 mb-6">Once you have a Whop account, follow these steps to become a LeadsAutopilot affiliate:</p>
+            
+            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-6">
+                <ol class="list-decimal pl-6 space-y-4 text-gray-700">
+                    <li>Visit our official Whop page at <a href="https://whop.com/leadsautopilot/" target="_blank" class="link-style">whop.com/leadsautopilot <i class="fas fa-external-link-alt text-xs"></i></a></li>
+                    <li>Click the <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded font-medium">Add to My Affiliates Dashboard</span> button on our page</li>
+                    <img src="/images/affiliate-steps/add to affiliate dashboard.png" alt="Add to Affiliate Dashboard" class="w-1/2">
+                    <li>Accept the affiliate agreement and terms</li>
+                    <li>You're now part of our affiliate program!</li>
+                </ol>
+            </div>
+            
+            <div class="flex justify-center">
+                <a href="https://whop.com/leadsautopilot/" target="_blank" class="btn-primary">
+                    <i class="fas fa-link mr-2"></i> Go to LeadsAutopilot Whop Page
+                </a>
+            </div>
+        </div>
+
+        <!-- Step 3: Get Your Link -->
+        <div class="section-card">
+            <div class="flex items-center mb-6">
+                <span class="step-number">3</span>
+                <h2 class="text-2xl font-semibold">Get Your Affiliate Link</h2>
+            </div>
+            
+            <img src="/images/affiliate-steps/dashboard.png" alt="Add to Affiliate Dashboard" class="w-full mb-6">
+            <p class="text-gray-700 mb-6">Whop offers two types of affiliate links you can use to promote LeadsAutopilot:</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="link-option">
+                    <div class="flex items-center mb-3">
+                        <div class="feature-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3 class="text-lg font-medium">Checkout Link</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4 pl-12">This link takes potential customers directly to the checkout page for a specific LeadsAutopilot plan.</p>
+                    <div class="pl-12">
+                        <p class="text-gray-700 font-medium mb-2">When to use:</p>
+                        <ul class="text-sm text-gray-600 list-disc pl-5">
+                            <li>For targeted promotions of a specific plan</li>
+                            <li>When your audience is ready to purchase</li>
+                            <li>In email campaigns or direct messages</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="link-option">
+                    <div class="flex items-center mb-3">
+                        <div class="feature-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 class="text-lg font-medium">Storefront Link</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4 pl-12">This link directs users to our full storefront where they can browse all available plans.</p>
+                    <div class="pl-12">
+                        <p class="text-gray-700 font-medium mb-2">When to use:</p>
+                        <ul class="text-sm text-gray-600 list-disc pl-5">
+                            <li>When promoting LeadsAutopilot in general</li>
+                            <li>For audiences who need to compare plans</li>
+                            <li>In blog posts, videos, or content marketing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 p-5 rounded-lg border border-blue-100 mb-6">
+                <div class="flex items-start">
+                    <i class="fas fa-lightbulb text-yellow-500 text-xl mt-1 mr-4"></i>
+                    <div>
+                        <h4 class="font-medium text-gray-800 mb-2">How to get your links:</h4>
+                        <ol class="list-decimal pl-5 text-gray-700 space-y-2">
+                            <li>Go to your Whop Affiliates Dashboard</li>
+                            <li>Find LeadsAutopilot in your approved programs</li>
+                            <li>Click "Get Links"</li>
+                            <li>Choose either Checkout or Storefront link</li>
+                            <li>Copy your unique affiliate link and start promoting!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center">
+                <a href="https://whop.com/dashboard/affiliate/customer/" target="_blank" class="btn-primary">
+                    <i class="fas fa-external-link-alt mr-2"></i> Go to Your Affiliates Dashboard
+                </a>
+            </div>
+        </div>
+
+        <!-- Step 4: Schedule a Consultation -->
+        <div class="section-card">
+            <div class="flex items-center mb-6">
+                <span class="step-number">4</span>
+                <h2 class="text-2xl font-semibold">Schedule a Consultation Call</h2>
+            </div>
+            
+            <p class="text-gray-700 mb-6">Get personalized guidance on how to maximize your earnings as a LeadsAutopilot affiliate. Our team will help you develop effective promotional strategies tailored to your audience.</p>
+            
+            <div class="flex flex-wrap md:flex-nowrap gap-6 mb-6">
+                <div class="w-full md:w-1/2">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-lightbulb text-blue-500 mr-2"></i>
+                            <h4 class="font-medium">Why Schedule a Call?</h4>
+                        </div>
+                        <ul class="text-sm text-gray-600 list-disc pl-5">
+                            <li>Get insider tips on which plans convert best</li>
+                            <li>Learn about upcoming promotions you can leverage</li>
+                            <li>Receive personalized marketing advice</li>
+                            <li>Have all your questions answered directly</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-users text-blue-500 mr-2"></i>
+                            <h4 class="font-medium">What to Expect</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">During this 15-minute call, we'll discuss your audience, provide custom promotional strategies, and share proven tactics that have worked for our top affiliates. You'll leave with a clear action plan to maximize your commissions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendly inline widget begin -->
+            <div class="rounded-lg overflow-hidden shadow-lg border border-gray-100">
+                <div class="calendly-inline-widget" data-url="https://calendly.com/colddm/leadsautopilot-affiliate-consultation" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
+            <!-- Calendly inline widget end -->
+        </div>
+
+        <!-- Earnings Calculator -->
+        <div class="section-card">
+            <h2 class="text-2xl font-semibold mb-6">Potential Earnings Calculator</h2>
+            <p class="text-gray-700 mb-8">Use the calculator below to estimate your monthly earnings as a LeadsAutopilot affiliate.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="calculator-card">
+                    <h3 class="text-lg font-medium mb-4">Your Inputs</h3>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-medium mb-2">Monthly Referrals</label>
+                        <input type="range" id="referralsSlider" min="1" max="20" value="5" class="mb-2">
+                        <div class="flex justify-between">
+                            <span class="text-xs text-gray-500">1</span>
+                            <span id="referralsValue" class="text-sm font-medium text-blue-600">5</span>
+                            <span class="text-xs text-gray-500">20</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-medium mb-2">Average Plan Price ($)</label>
+                        <input type="range" id="priceSlider" min="97" max="297" value="197" step="50" class="mb-2">
+                        <div class="flex justify-between">
+                            <span class="text-xs text-gray-500">$97</span>
+                            <span id="priceValue" class="text-sm font-medium text-blue-600">$197</span>
+                            <span class="text-xs text-gray-500">$297</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-medium mb-2">Commission Rate (%)</label>
+                        <input type="range" id="commissionSlider" min="20" max="40" value="30" class="mb-2">
+                        <div class="flex justify-between">
+                            <span class="text-xs text-gray-500">20%</span>
+                            <span id="commissionValue" class="text-sm font-medium text-blue-600">30%</span>
+                            <span class="text-xs text-gray-500">40%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-4 mt-8">
+                        <h4 class="font-medium text-gray-800 mb-2">Your Estimated Monthly Earnings</h4>
+                        <p id="monthlyEarnings" class="text-3xl font-bold text-blue-600">$295.50</p>
+                        <p id="yearlyEarnings" class="text-lg text-gray-700">$3,546 per year</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Earnings Projection</h3>
+                    <div class="bg-white rounded-lg p-4 border border-gray-200 h-64">
+                        <canvas id="earningsChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-3">This chart shows your potential earnings growth over the next 12 months, assuming a consistent number of monthly referrals.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section-card">
+            <h2 class="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-lg font-medium mb-2">Do I need an active LeadsAutopilot membership to become an affiliate?</h3>
+                    <p class="text-gray-700">Nope. You can promote the platform without paying for it.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium mb-2">Will I earn commissions on affiliates that my referrals bring in?</h3>
+                    <p class="text-gray-700">No. Commissions are single-level only—you earn on the customers you personally refer.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium mb-2">How and when do I get paid?</h3>
+                    <p class="text-gray-700">Our payment provider lets you choose monthly, weekly, daily, or even instant payouts.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium mb-2">What’s the cookie window?</h3>
+                    <p class="text-gray-700">30 days. Any purchase a prospect makes within 30 days of clicking your link earns you commission.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium mb-2">Can I promote LeadsAutopilot outside of LinkedIn?</h3>
+                    <p class="text-gray-700">Absolutely. While our ideal users are on LinkedIn, they’re active on other platforms too—feel free to reach them wherever they hang out.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium mb-2">Do you provide marketing materials?</h3>
+                    <p class="text-gray-700">Yes. Once you’re approved, you’ll find banners, product images, and swipe copy in your Whop dashboard—ready to post.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="text-center mt-12 text-sm text-gray-500">
+            <p>&copy; {{ current_year }} LeadsAutopilot. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="/" class="hover:underline mx-2"><i class="fas fa-home mr-1"></i> Home</a> |
+                <a href="https://app.leadsautopilot.com/login" class="hover:underline mx-2"><i class="fas fa-sign-in-alt mr-1"></i> Login</a> |
+                <a href="https://whop.com/leadsautopilot/help-desk/" class="hover:underline mx-2"><i class="fas fa-question-circle mr-1"></i> Support</a>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // Replace year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            document.body.innerHTML = document.body.innerHTML.replace(/{{ current_year }}/g, currentYear);
+            
+            // Initialize calculator
+            initCalculator();
+            
+            // Initialize chart
+            initChart();
+        });
+        
+        function initCalculator() {
+            const referralsSlider = document.getElementById('referralsSlider');
+            const priceSlider = document.getElementById('priceSlider');
+            const commissionSlider = document.getElementById('commissionSlider');
+            
+            const referralsValue = document.getElementById('referralsValue');
+            const priceValue = document.getElementById('priceValue');
+            const commissionValue = document.getElementById('commissionValue');
+            
+            const monthlyEarnings = document.getElementById('monthlyEarnings');
+            const yearlyEarnings = document.getElementById('yearlyEarnings');
+            
+            function updateCalculator() {
+                const referrals = parseInt(referralsSlider.value);
+                const price = parseInt(priceSlider.value);
+                const commission = parseInt(commissionSlider.value) / 100;
+                
+                const monthly = referrals * price * commission;
+                const yearly = monthly * 12;
+                
+                referralsValue.textContent = referrals;
+                priceValue.textContent = '$' + price;
+                commissionValue.textContent = (commission * 100) + '%';
+                
+                monthlyEarnings.textContent = '$' + monthly.toFixed(2);
+                yearlyEarnings.textContent = '$' + yearly.toFixed(0) + ' per year';
+                
+                updateChart(referrals, price, commission);
+            }
+            
+            referralsSlider.addEventListener('input', updateCalculator);
+            priceSlider.addEventListener('input', updateCalculator);
+            commissionSlider.addEventListener('input', updateCalculator);
+            
+            updateCalculator();
+        }
+        
+        let earningsChart;
+        
+        function initChart() {
+            const ctx = document.getElementById('earningsChart').getContext('2d');
+            
+            earningsChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6', 'Month 7', 'Month 8', 'Month 9', 'Month 10', 'Month 11', 'Month 12'],
+                    datasets: [{
+                        label: 'Monthly Earnings ($)',
+                        backgroundColor: 'rgba(0, 71, 255, 0.1)',
+                        borderColor: '#0047ff',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#0047ff',
+                        pointRadius: 4,
+                        tension: 0.3,
+                        fill: true,
+                        data: [295.50, 295.50, 295.50, 295.50, 295.50, 295.50, 295.50, 295.50, 295.50, 295.50, 295.50, 295.50]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value;
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return '$' + context.raw.toFixed(2);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function updateChart(referrals, price, commission) {
+            const monthly = referrals * price * commission;
+            
+            // Create array with 12 elements all set to monthly value
+            const data = Array(12).fill(monthly);
+            
+            earningsChart.data.datasets[0].data = data;
+            earningsChart.update();
+        }
+    </script>
+</body>
+</html> 
