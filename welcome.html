@@ -86,6 +86,7 @@
             transition: all 0.3s;
             display: inline-block;
             box-shadow: 0 4px 6px -1px rgba(0, 71, 255, 0.2);
+            text-decoration: none;
         }
         .btn-primary:hover {
             background: linear-gradient(135deg, #0039cc, #0090e0);
@@ -121,6 +122,13 @@
             margin-right: 1rem;
             color: #0047ff;
         }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 71, 255, 0.05), rgba(0, 165, 255, 0.05));
+            border-left: 4px solid #0047ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -129,144 +137,159 @@
         <div class="text-center mb-12">
             <img src="/images/leadsautopilot-pro-logo-black.png" alt="LeadsAutopilot Logo" class="h-14 mx-auto mb-6">
             <h1 class="heading mb-4">Welcome to LeadsAutopilot!</h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Let's get you started on automating your LinkedIn growth and generating high-quality leads with our powerful platform.</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Follow these simple steps to get your account set up and start automating your LinkedIn growth.</p>
         </div>
 
-        <!-- Step 1: Connect Account -->
+        <!-- Step 1: Reset Password -->
         <div class="section-card">
             <div class="flex items-center mb-6">
                 <span class="step-number">1</span>
+                <h2 class="text-2xl font-semibold">Reset Your Password</h2>
+            </div>
+            <p class="text-gray-700 mb-4">Start by entering your email to reset your password and get access to your account.</p>
+            <div class="highlight-box">
+                <p class="text-gray-700 mb-3"><strong>Go to:</strong></p>
+                <a href="http://app.leadsautopilot.com/reset" target="_blank" class="link-style text-lg">
+                    <i class="fas fa-external-link-alt mr-2"></i>
+                    app.leadsautopilot.com/reset
+                </a>
+                <p class="text-gray-600 mt-3 text-sm">Enter your email address and follow the link in your email to log in.</p>
+            </div>
+        </div>
+
+        <!-- Step 2: Change Password -->
+        <div class="section-card">
+            <div class="flex items-center mb-6">
+                <span class="step-number">2</span>
+                <h2 class="text-2xl font-semibold">Update Your Password</h2>
+            </div>
+            <p class="text-gray-700 mb-4">Once logged in, go to the settings page to change your password to something secure.</p>
+            <div class="highlight-box">
+                <p class="text-gray-700 mb-3"><strong>Go to:</strong></p>
+                <a href="https://app.leadsautopilot.com/settings" target="_blank" class="link-style text-lg">
+                    <i class="fas fa-external-link-alt mr-2"></i>
+                    app.leadsautopilot.com/settings
+                </a>
+                <p class="text-gray-600 mt-3 text-sm">Navigate to the settings page and update your password.</p>
+            </div>
+        </div>
+
+        <!-- Step 3: Add New Seat -->
+        <div class="section-card">
+            <div class="flex items-center mb-6">
+                <span class="step-number">3</span>
+                <h2 class="text-2xl font-semibold">Add a New Seat</h2>
+            </div>
+            <p class="text-gray-700 mb-4">Go to the seats tab and click "Add new seat" to set up your LinkedIn automation.</p>
+            <div class="highlight-box">
+                <p class="text-gray-700 mb-3"><strong>Go to:</strong></p>
+                <a href="https://app.leadsautopilot.com/seats" target="_blank" class="link-style text-lg">
+                    <i class="fas fa-external-link-alt mr-2"></i>
+                    app.leadsautopilot.com/seats
+                </a>
+                <p class="text-gray-600 mt-3 text-sm">Click the "Add new seat" button to begin connecting your LinkedIn account.</p>
+            </div>
+        </div>
+
+        <!-- Step 4: LinkedIn Credentials -->
+        <div class="section-card">
+            <div class="flex items-center mb-6">
+                <span class="step-number">4</span>
                 <h2 class="text-2xl font-semibold">Connect Your LinkedIn Account</h2>
             </div>
-            <p class="text-gray-700 mb-6">Choose the connection method that works best for you:</p>
+            <p class="text-gray-700 mb-4">Enter your LinkedIn credentials or follow the passwordless setup process.</p>
             
-            <div class="connection-option mb-8 pb-8 border-b border-gray-200">
+            <div class="connection-option mb-6">
                 <div class="flex items-center mb-3">
                     <div class="feature-icon">
                         <i class="fas fa-lock"></i>
                     </div>
-                    <h3 class="text-lg font-medium">Recommended: Password & Secret Key</h3>
+                    <h3 class="text-lg font-medium text-gray-800">Option A: Enter LinkedIn Credentials</h3>
                 </div>
-                <p class="text-gray-600 mb-4 pl-12">Prevents logouts and ensures smooth, uninterrupted growth. This is the most reliable method for consistent results.</p>
-                <div class="pl-12 flex flex-wrap items-center gap-4">
-                    <a href="/connection-steps" class="link-style">
-                        <i class="fas fa-play-circle mr-2"></i> View Connection Steps Video
-                    </a>
-                    <div class="divider hidden md:block w-px h-6 bg-gray-300 mx-2"></div>
-                    <a href="https://whop.com/leadsautopilot/help-desk-connect-your-linked-in-account-8c4pV9of5df7FC/app/" target="_blank" class="btn-primary text-sm !px-4 !py-2">
-                        <i class="fas fa-headset mr-2"></i> Open Secure Help Desk Ticket
-                    </a>
-                </div>
-                <div class="mt-6 pl-12">
-                    <p class="text-gray-500 text-sm mb-2"><i class="fas fa-info-circle mr-1"></i> Please include the following in your ticket:</p>
-                    <pre class="bg-gray-50 p-3 rounded-lg text-sm text-gray-700 mt-1 block w-full md:w-2/3">LinkedIn email:
-LinkedIn password:
-LinkedIn 2FA Secret Key:</pre>
+                <div class="pl-12">
+                    <p class="text-gray-600 mb-3">You'll need to provide:</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                        <li>LinkedIn email address</li>
+                        <li>LinkedIn password</li>
+                        <li>2FA secret key</li>
+                    </ul>
+                    <div class="highlight-box bg-yellow-50 border-yellow-200">
+                        <p class="text-yellow-800 font-medium mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Important Requirements:</p>
+                        <p class="text-yellow-700 text-sm">You must have 2FA enabled on your LinkedIn account and set to the secret key option only. Follow the video tutorial below to enable 2FA and get your secret key.</p>
+                    </div>
                 </div>
             </div>
-            
+
             <div class="connection-option">
                 <div class="flex items-center mb-3">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="text-lg font-medium">Passwordless: LeadsAutopilot Connect Extension</h3>
+                    <h3 class="text-lg font-medium text-gray-800">Option B: Passwordless Setup</h3>
                 </div>
-                <p class="text-gray-600 mb-4 pl-12">Connect securely without providing your password using our browser extension.</p>
-                <div class="pl-12 flex flex-wrap items-center gap-4">
-                    <a href="/passwordless" class="link-style">
-                        <i class="fas fa-puzzle-piece mr-2"></i> View Passwordless Steps
-                    </a>
-                    <div class="divider hidden md:block w-px h-6 bg-gray-300 mx-2"></div>
-                    <a href="https://whop.com/leadsautopilot/help-desk-connect-your-linked-in-account-8c4pV9of5df7FC/app/" target="_blank" class="btn-primary text-sm !px-4 !py-2">
-                        <i class="fas fa-headset mr-2"></i> Open Secure Help Desk Ticket
-                    </a>
+                <div class="pl-12">
+                    <p class="text-gray-600 mb-4">Follow the passwordless steps for a more secure connection method without sharing your password.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <div class="flex items-center mb-3">
+                    <i class="fas fa-play-circle text-blue-500 mr-2"></i>
+                    <h4 class="font-medium text-blue-800">Setup Tutorial Video</h4>
+                </div>
+                <p class="text-blue-700 text-sm mb-3">Watch our step-by-step video guide to enable 2FA and get your secret key:</p>
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <iframe 
+                        width="100%" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/d4z4gX8YIW4?start=20" 
+                        title="LinkedIn 2FA Setup Tutorial" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
 
-        <!-- Step 2: Book Onboarding -->
+        <!-- Step 5: Configure Settings -->
         <div class="section-card">
             <div class="flex items-center mb-6">
-                <span class="step-number">2</span>
-                <h2 class="text-2xl font-semibold">Book Your FREE Onboarding Call</h2>
+                <span class="step-number">5</span>
+                <h2 class="text-2xl font-semibold">Configure Your Seat Settings</h2>
             </div>
-            
-            <div class="flex flex-wrap md:flex-nowrap gap-6 mb-6">
-                <div class="w-full md:w-1/3">
-                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-chart-line text-blue-500 mr-2"></i>
-                            <h4 class="font-medium">Higher Success Rate</h4>
-                        </div>
-                        <p class="text-sm text-gray-600">Users who complete onboarding see 3x better results on average.</p>
-                    </div>
+            <p class="text-gray-700 mb-4">Once your seat appears, click on its settings to customize your automation preferences.</p>
+            <div class="highlight-box">
+                <div class="flex items-center mb-2">
+                    <i class="fas fa-cog text-blue-500 mr-2"></i>
+                    <span class="font-medium text-gray-800">Next Steps:</span>
                 </div>
-                <div class="w-full md:w-1/3">
-                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-user-friends text-blue-500 mr-2"></i>
-                            <h4 class="font-medium">Personalized Strategy</h4>
-                        </div>
-                        <p class="text-sm text-gray-600">Get a customized plan tailored to your specific industry and goals.</p>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/3">
-                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-gift text-blue-500 mr-2"></i>
-                            <h4 class="font-medium">100% Free</h4>
-                        </div>
-                        <p class="text-sm text-gray-600">This premium service is included with your membership at no extra cost.</p>
-                    </div>
-                </div>
+                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                    <li>Your seat should appear in the seats list</li>
+                    <li>Click on the settings icon for your seat</li>
+                    <li>Update your automation settings and targeting preferences</li>
+                    <li>Configure your messaging templates and connection limits</li>
+                </ul>
             </div>
-            
-            <p class="text-gray-700 mb-4">Most users see significantly more success after their onboarding call. It's more than just an introduction – we'll work with you to ensure you get the most out of your membership and see real results, faster.</p>
-
-            <!-- Calendly inline widget begin -->
-            <div class="rounded-lg overflow-hidden shadow-lg border border-gray-100">
-                <div class="calendly-inline-widget" data-url="https://calendly.com/colddm/leadsautopilot-pro-onboarding-call" style="min-width:320px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            </div>
-            <!-- Calendly inline widget end -->
         </div>
 
-        <!-- Step 3: What to Expect -->
-        <div class="section-card">
-            <div class="flex items-center mb-6">
-                <span class="step-number">3</span>
-                <h2 class="text-2xl font-semibold">What Happens Next?</h2>
+        <!-- Success Message -->
+        <div class="section-card bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
+            <div class="flex items-center mb-4">
+                <div class="feature-icon bg-green-100">
+                    <i class="fas fa-check-circle text-green-500"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-green-800">You're All Set!</h3>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <div class="bg-gradient-to-br from-white to-blue-50 p-5 rounded-lg shadow-sm border border-blue-100">
-                    <div class="text-blue-500 mb-3">
-                        <i class="fas fa-robot text-2xl"></i>
-                    </div>
-                    <h4 class="text-lg font-medium mb-2">Week 1: Starting Up</h4>
-                    <p class="text-gray-600 text-sm">Your account gets connected and our system begins reaching out to targeted prospects.</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-white to-blue-50 p-5 rounded-lg shadow-sm border border-blue-100">
-                    <div class="text-blue-500 mb-3">
-                        <i class="fas fa-chart-bar text-2xl"></i>
-                    </div>
-                    <h4 class="text-lg font-medium mb-2">Week 2: Building Momentum</h4>
-                    <p class="text-gray-600 text-sm">Your activity increases as connections accept and our AI starts engaging with your new network.</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-white to-blue-50 p-5 rounded-lg shadow-sm border border-blue-100">
-                    <div class="text-blue-500 mb-3">
-                        <i class="fas fa-handshake text-2xl"></i>
-                    </div>
-                    <h4 class="text-lg font-medium mb-2">Week 3+: Full Automation</h4>
-                    <p class="text-gray-600 text-sm">Your LinkedIn network grows steadily with qualified leads and potential clients.</p>
-                </div>
+            <p class="text-green-700 mb-4">Once you've completed these steps, LeadsAutopilot will begin automating your LinkedIn outreach. You should start seeing activity within 24-48 hours.</p>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://app.leadsautopilot.com/login" class="btn-primary">
+                    <i class="fas fa-sign-in-alt mr-2"></i>Go to Dashboard
+                </a>
+                <a href="https://whop.com/leadsautopilot/help-desk/" target="_blank" class="btn-primary bg-gray-600 hover:bg-gray-700">
+                    <i class="fas fa-question-circle mr-2"></i>Get Help
+                </a>
             </div>
-            
-            <p class="text-gray-700">Once your account is connected and configured (either by yourself or after your onboarding call), you're all set! Our system will handle everything automatically.</p>
-            <p class="text-gray-700 mt-3">Over the next week, you should start seeing activity on your LinkedIn profile ramp up as LeadsAutopilot begins working its magic. Keep an eye on your connection requests and messages!</p>
         </div>
 
         <!-- Footer Links -->
