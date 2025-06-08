@@ -3,409 +3,1120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>#1 LinkedIn Growth Solution for Business Owners &middot; LeadsAutopilot Pro</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="icon" href="/images/icon.png" type="image/png">
+    <title>LeadsAutopilot - 10X Your LinkedIn Growth with AI Automation</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
         }
-        .fade-up {
-            opacity: 0;
-            transdiv: translateY(20px);
-            transition: opacity 0.6s ease-out, transdiv 0.6s ease-out;
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
-        .fade-up.visible {
-            opacity: 1;
-            transdiv: translateY(0);
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .terminal {
-            background-color: white;
-            color: #222;
-            font-family: monospace;
-            padding: 20px;
-            border: 2px solid white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px white;
-            max-height: 400px; /* Adjust based on font size to fit 20 rows */
-            overflow: hidden;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
-        .terminal-header {
-            font-weight: bold;
-            margin-bottom: 10px;
+
+        .logo-icon {
+            height: 32px;
+            width: 32px;
         }
-        .terminal-text {
-            opacity: 0;
-            transition: opacity 0.6s ease-out;
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
         }
-        .terminal-text.visible {
-            opacity: 1;
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
         }
-        .timeline {
-            position: relative;
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(-45deg, #2563eb, #3b82f6, #1d4ed8, #2563eb);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientMove 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        /* Limited Time Offer - Minimal Style */
+        .limited-offer {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .offer-text {
+            font-size: 1rem;
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .customers-left {
+            font-size: 0.875rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Star Rating */
+        .star-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .star {
+            color: #ff6b35;
+            font-size: 1.25rem;
+        }
+
+        .rating-text {
+            color: #666;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Key Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-badge {
+            background: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Trusted By Section */
+        .trusted-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: #f8fafc;
+        }
+
+        .trusted-section h3 {
+            font-size: 1.125rem;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .topvoice-logo {
+            max-width: 200px;
+            opacity: 0.8;
+            margin-top: 0;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: #666;
+        }
+
+        /* How It Works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        .step-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #f1f5f9;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin: 2rem 0;
+        }
+
+        /* Lists */
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-item p {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        /* Who Is It For */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .audience-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .audience-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        /* Whop Partner Section */
+        .whop-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: white;
+        }
+
+        .whop-section h3 {
+            font-size: 1.125rem;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .whop-logo {
+            height: 50px;
+            max-width: 150px;
+            opacity: 0.8;
+        }
+
+        /* Risk-Free Trial */
+        .trial-section {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            margin: 4rem 0;
+        }
+
+        .trial-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .trial-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .satisfaction-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .btn-white {
+            background: white;
+            color: #2563eb;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-cta {
+                gap: 0.5rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .dashboard-screenshot {
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.39);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-screenshot:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        /* New Endorsements Section */
+        .endorsements-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 4rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 2rem;
+        }
+
+        .endorsement-item {
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .endorsement-item h3 {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .endorsement-item .whop-endorsement-logo {
+            max-width: 150px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .endorsement-item .guarantee-icon {
+            max-width: 100px;
+            font-size: 2rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+        .endorsement-item .guarantee-text {
+            font-size: 0.875rem;
+            color: #666;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+        }
+        .review-link {
+            color: #d38c72;
+            text-decoration: none;
+        }
+        .review-link:hover {
+            text-decoration: underline;
+        }
+
+        /* FAQ Section */
+        #faq {
+            background: #f8fafc;
+        }
+
+        .faq-container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #3490dc;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: #1a1a1a;
+            list-style: none; /* remove default marker */
         }
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -12px;
-            background-color: white;
-            border: 4px solid #3490dc;
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
+        .faq-question::-webkit-details-marker {
+            display: none; /* remove default marker for Safari */
         }
-        .timeline-item.left {
-            left: 0;
+
+        .faq-icon {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2563eb;
+            transition: transform 0.3s ease;
         }
-        .timeline-item.right {
-            left: 50%;
+
+        .faq-item[open] .faq-icon {
+            transform: rotate(45deg);
         }
-        .timeline-item.right::after {
-            left: -12px;
+        
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+            line-height: 1.7;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            margin-top: -1rem; /* Adjust to connect with question */
+            animation: fadeIn 0.3s ease;
         }
-        .timeline-item-content {
-            padding: 20px 30px;
-            background-color: white;
-            position: relative;
-            border-radius: 6px;
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .timeline-item-content p {
-            margin: 0;
-            color: #333;
+
+        /* Floating Ribbon */
+        .floating-ribbon {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1001;
+            background: white;
+            border-radius: 50px;
+            padding: 0.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
         }
-        .timeline-item-content h3 {
-            margin-top: 0;
-            color: #3490dc;
+
+        .floating-ribbon:hover {
+            transform: translateY(-3px);
+        }
+
+        .ribbon-signup-btn, .ribbon-support-link {
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .ribbon-signup-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+        }
+
+        .ribbon-support-link {
+            color: #666;
+        }
+
+        .ribbon-support-link:hover {
+            background-color: #f1f5f9;
+            color: #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+            .floating-ribbon {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.4rem;
+                gap: 0.4rem;
+            }
+            .ribbon-signup-btn, .ribbon-support-link {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #111827; /* Equivalent to bg-gray-900 */
+            color: white;
+            padding: 4rem 2rem;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+        .footer-copyright p {
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+        .footer-payments {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer-payments svg {
+            width: 40px; /* w-10 */
+            height: 24px; /* h-10 is not proportional, matching visual */
+        }
+
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-direction: row;
+            }
         }
     </style>
 </head>
-<body class="text-gray-900">
-    <div class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white min-h-screen">
-        <header class="flex items-center justify-between px-8 py-4 max-w-screen-xl mx-auto">
-            <img src="/images/leadsautopilot-pro-logo.png" alt="LeadsAutopilot Pro Logo" class="h-12">
-            <nav class="flex space-x-6 text-sm font-medium">
-                <a href="#join" class="hover:text-gray-300">Free Trial</a>
-                <a href="#features" class="hover:text-gray-300">Features</a>
-                <a href="#how-it-works" class="hover:text-gray-300">How It Works</a>
-                <a href="#privacy" class="hover:text-gray-300">Privacy</a>
-                <a href="#pricing" class="hover:text-gray-300">Pricing</a>
-                <a href="#faq" class="hover:text-gray-300">FAQ</a>
-            </nav>
-            <div class="flex space-x-4">
-                <a href="https://whop.com/hub/leadsautopilot">
-                    <button class="px-4 py-2 bg-gray-900 hover:bg-gray-800 rounded-md text-sm">Log In</button>
-                </a>
-                <a href="https://whop.com/checkout/plan_xGCwOvuiCEzbh?d2c=true">
-                    <button class="px-4 py-2 bg-gradient-to-r from-blue-400 to-blue-600 hover:bg-purple-500 rounded-md text-sm">Sign Up for Free</button>
-                </a>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="images/icon.png" alt="LeadsAutopilot Logo" class="logo-icon">
+                LeadsAutopilot
+            </a>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="/affiliate">Become an Affiliate (50%)</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://app.leadsautopilot.com/login" class="btn-secondary">Log In</a>
+                <a href="https://app.leadsautopilot.com/join" class="btn-primary">Sign Up</a>
             </div>
-        </header>
-        <section class="flex flex-row items-center justify-center mt-16 px-8 py-16 bg-[url('https://via.placeholder.com/4x4/FFFFFF/FFFFFF?text=+')] bg-repeat bg-opacity-10 max-w-screen-xl mx-auto fade-up">
-            <div class="w-2/3 pr-8">
-                <p class="mb-2 text-sm text-white border border-white bg-black bg-opacity-75 px-2 py-1 rounded-full shadow-lg font-mono">
-                    <a href="#join">Get started with the ONLY tool for generating targeted, inbound leads from LinkedIn ></a>
-                </p>
-                <h1 class="text-5xl font-semibold mb-4 bg-clip-text">
-                    Get <span class="bg-gradient-to-r text-transparent bg-clip-text from-blue-400 to-blue-600">targeted, inbound leads from LinkedIn</span> and build your brand in less time.
-                </h1>
-                <p class="mb-8 max-w-xl text-gray-300" id="join">
-                    Reach new audiences with AI-driven insights and automation. <b>Enter your email address below to try LeadsAutopilot Pro FREE for 7 days.</b>
-                </p>
-                <div class="flex space-x-4 mb-4" method="post">
-                    <input type="email" name="email" placeholder="Enter your email" class="px-5 py-3 rounded-md w-96 text-black" required>
-                    <a href="https://whop.com/checkout/plan_xGCwOvuiCEzbh?d2c=true">
-                        <button type="submit" class="px-6 py-2 bg-gradient-to-r from-blue-400 to-blue-600 hover:bg-purple-500 rounded-md font-semibold shadow-lg hover:shadow-xl transition ease-in-out flex items-center space-x-2">
-                            <span>Start 7-day free trial</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
-                    </a>
-                </div>
-                <div class="flex space-x-4 text-gray-300">
-                    <div class="flex items-center space-x-2">
-                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span>Try LeadsAutopilot Pro for free</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span>1:1 onboarding call with our team</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span>Compliant with LinkedIn</span>
-                    </div>
-                </div>
-            </div>
-            <div class="w-1/3 transdiv hover:scale-105 transition-transdiv">
-                <div class="terminal">
-                    <div class="terminal-header">LeadsAutopilot Pro ></div>
-                    <div id="terminal-content"></div>
-                </div>
-            </div>
-        </section>
-        <section class="mt-12 flex flex-wrap justify-center space-x-4 max-w-screen-xl mx-auto" id="features">
-            <div class="relative bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-lg w-72 mb-4 fade-up">
-                <div class="flex items-center mb-2">
-                    <i class="fas fa-robot text-blue-500 mr-2"></i>
-                    <h2 class="text-xl font-bold text-white">Automated, targeted LinkedIn engagement</h2>
-                </div>
-                <p class="text-gray-300">Save time and effort with a tool that interacts with thousands of LinkedIn profiles for you. LeadsAutopilot automatically visits profiles, likes posts, and interacts with comments to attract your ideal audience. With up to 6,000 actions per day, your network grows on autopilot.</p>
-            </div>
-            <div class="relative bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-lg w-72 mb-4 fade-up">
-                <div class="flex items-center mb-2">
-                    <i class="fas fa-users text-blue-500 mr-2"></i>
-                    <h2 class="text-xl font-bold text-white">Generate inbound leads who connect with you first</h2>
-                </div>
-                <p class="text-gray-300">Stop chasing clients and let them come to you. This tool targets the right people in your industry, generating 100-250 high-quality leads and followers every single day. It’s like having a personal assistant working 24/7.</p>
-            </div>
-            <div class="relative bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-lg w-72 mb-4 fade-up">
-                <div class="flex items-center mb-2">
-                    <i class="fas fa-cloud text-blue-500 mr-2"></i>
-                    <h2 class="text-xl font-bold text-white">Cloud-Based and Always On</h2>
-                </div>
-                <p class="text-gray-300">No need to download anything or leave your computer running. LeadsAutopilot works entirely in the cloud, providing consistent engagement day and night. It’s hassle-free and works anywhere you do.</p>
-            </div>
-            <div class="relative bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-lg w-72 mb-4 fade-up">
-                <div class="flex items-center mb-2">
-                    <i class="fas fa-cogs text-blue-500 mr-2"></i>
-                    <h2 class="text-xl font-bold text-white">Smart customization options</h2>
-                </div>
-                <p class="text-gray-300">Fine-tune your outreach with features like keyword filtering, country-specific targeting, and adjustable engagement timing. Whether you want to focus on specific industries or avoid certain areas, LeadsAutopilot makes it easy to hit your goals.</p>
-            </div>
-        </section>
-    </div>
-    <section class="bg-white py-16" id="how-it-works">
-        <div class="max-w-screen-xl mx-auto px-8">
-            <h2 class="text-3xl font-bold mb-8 text-center">Grow your business on LinkedIn with LeadsAutopilot Pro</h2>
-            <div class="timeline">
-                <div class="timeline-item left fade-up">
-                    <div class="timeline-item-content">
-                        <h3>Step 1</h3>
-                        <p>LeadsAutopilot Pro interacts with 3,000-6,000 profiles in your industry/niche each day. Fully compliant with LinkedIn.</p>
-                    </div>
-                </div>
-                <div class="timeline-item right fade-up">
-                    <div class="timeline-item-content">
-                        <h3>Step 2</h3>
-                        <p>A percentage of these people will visit your profile and follow you. We provide resources to maximize this conversion rate.</p>
-                    </div>
-                </div>
-                <div class="timeline-item left fade-up">
-                    <div class="timeline-item-content">
-                        <h3>Step 3</h3>
-                        <p>We automatically send welcome messages to people who connect with you and meet your criteria - starting sales conversations.</p>
-                    </div>
-                </div>
-                <div class="timeline-item right fade-up">
-                    <div class="timeline-item-content">
-                        <h3>Step 4</h3>
-                        <p>All you have to do is arrange a meeting and close them on your product/service.<br>
-                            <small>Want us to take care of this part for you? Reach out to sales - <a href="mailto:sales@brookstonemarketing.org" class="text-blue-500">sales@brookstonemarketing.org</a></small></p>
-                    </div>
-                </div>
-            </div>
+        </div>
+    </nav>
 
-            <div class="text-center mt-8 w-2/3 m-auto">
-                <div class="flex space-x-4 mb-4" method="post">
-                    <input type="email" name="email" placeholder="Enter your email" class="px-5 py-3 rounded-md bg-gray-100 w-full" required>
-                    <a href="https://whop.com/checkout/plan_xGCwOvuiCEzbh?d2c=true">
-                        <button type="submit" class="px-6 py-2 text-white bg-gradient-to-r from-blue-400 to-blue-600 hover:bg-purple-500 rounded-md font-semibold shadow-lg hover:shadow-xl transition ease-in-out flex items-center space-x-2">
-                            <span>Start 7-day free trial</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
-                    </a>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>10X Your <span class="gradient-text">LinkedIn Growth</span><br>with AI-Powered Engagement</h1>
+                <p>Automated, targeted LinkedIn engagement that generates high-quality leads while you focus on closing deals.</p>
+                
+                <div class="hero-cta">
+                    <a href="https://app.leadsautopilot.com/join" class="btn-primary" style="font-size: 1.125rem; padding: 1rem 2rem;">Get Started Risk-Free</a>
+                    <a href="#how-it-works" class="btn-secondary" style="font-size: 1.125rem; padding: 1rem 2rem;">Learn More</a>
+                </div>
+
+                <!-- Limited Time Offer -->
+                <div class="limited-offer">
+                    <div class="offer-text">25% off for the first 75 customers (8 left)</div>
+                    <div class="offer-text">Use code <strong>LEADS75</strong> at checkout</div>
+                </div>
+
+                <div class="endorsements-container">
+                    <div class="endorsement-item">
+                        <h3>Official Whop Partner</h3>
+                        <div class="star-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-text"><a href="https://whop.com/leadsautopilot" target="_blank" class="review-link">4.83/5 stars on Whop</a></span>
+                        </div>
+                        <img src="images/whop.png" alt="Whop Official Partner" class="whop-endorsement-logo">
+                        <p class="guarantee-text">Featured in the Whop Marketplace</p>
+                    </div>
+                    <div class="endorsement-item">
+                        <h3>Trusted by LinkedIn Top Voices</h3>
+                        <img src="images/topvoice.png" alt="LinkedIn Top Voice" class="topvoice-logo">
+                        <p class="guarantee-text">Trusted by 60+ Members Including LinkedIn Top Voices</p>
+                    </div>
+                    <div class="endorsement-item">
+                        <h3>100% Money-Back Guarantee</h3>
+                        <img src="images/money-back-guarantee.png" alt="Money-Back Guarantee" class="guarantee-icon">
+                        <p class="guarantee-text">Not satisfied? Get a full refund within 48 hours, no questions asked.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="bg-gray-100 py-16">
-        <div class="max-w-screen-xl mx-auto px-8" id="privacy">
-            <h2 class="text-3xl font-bold mb-8 text-center">Privacy and Security</h2>
-            <div class="mt-8 text-center" style="margin-bottom: 30px">
-                <p class="text-gray-700"><b>You'll never have to share your password to use LeadsAutopilot Pro.</b> Simply connect your LinkedIn account via our Chrome extension, approved by Google's best security practices.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-lock text-blue-500 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Military-grade encryption</h3>
-                    <p class="text-gray-700">Your data is protected with the highest level of encryption available.</p>
+        </section>
+
+        <!-- Key Features Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Automate Your LinkedIn Success</h2>
+                    <p>Everything you need to scale your LinkedIn presence and generate consistent leads</p>
                 </div>
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-shield-alt text-blue-500 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Zero recorded account bans</h3>
-                    <p class="text-gray-700">Our system is fully compliant with LinkedIn's terms of service.</p>
-                </div>
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-headset text-blue-500 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
-                    <p class="text-gray-700">Our team is available around the clock to assist you with any issues.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="bg-white py-16" id="pricing">
-        <div class="max-w-screen-xl mx-auto px-8">
-            <h2 class="text-3xl font-bold mb-8 text-center">Pricing</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="border border-gray-200 rounded-lg shadow-lg p-6">
-                    <h3 class="text-2xl font-bold mb-4">Pro</h3>
-                    <p class="text-4xl font-bold mb-4">$99<span class="text-xl text-gray-600">/mo</span></p>
-                    <ul class="text-gray-700 mb-6">
-                        <li class="mb-2">One seat</li>
-                        <li class="mb-2">Reach 6,000 profiles every day (180,000 per month)</li>
-                        <li class="mb-2">24/7 cloud service with expert setup</li>
-                        <li class="mb-2">Target LinkedIn profiles in any industry</li>
-                        <li class="mb-2">Cloud-based</li>
-                        <li class="mb-2">7-Day Free Trial Included</li>
-                    </ul>
-                    <a href="https://whop.com/checkout/plan_xGCwOvuiCEzbh?d2c=true">
-                        <button class="px-6 py-2 bg-gradient-to-r from-blue-400 to-blue-600 hover:bg-purple-500 rounded-md font-semibold shadow-lg hover:shadow-xl transition ease-in-out flex items-center space-x-2 text-white">
-                            <span>Try Pro 7-Days Free</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
-                    </a>
-                </div>
-                <div class="border border-gray-200 rounded-lg shadow-lg p-6">
-                    <h3 class="text-2xl font-bold mb-4">Scale</h3>
-                    <p class="text-4xl font-bold mb-4">$249<span class="text-xl text-gray-600">/mo</span></p>
-                    <ul class="text-gray-700 mb-6">
-                        <li class="mb-2">Three seats</li>
-                        <li class="mb-2">Reach 18,000 profiles every day (540,000 per month)</li>
-                        <li class="mb-2">24/7 cloud service with expert setup</li>
-                        <li class="mb-2"><b>Priority support</b></li>
-                        <li class="mb-2">Target LinkedIn profiles in any industry</li>
-                        <li class="mb-2">Cloud-based</li>
-                        <li class="mb-2">7-Day Free Trial Included</li>
-                    </ul>
-                    <a href="https://whop.com/checkout/plan_NfcnhOAmowjgD?d2c=true">
-                        <button class="px-6 py-2 bg-gradient-to-r from-blue-400 to-blue-600 hover:bg-purple-500 rounded-md font-semibold shadow-lg hover:shadow-xl transition ease-in-out flex items-center space-x-2 text-white">
-                            <span>Try Scale 7-Days Free</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
-                    </a>
-                </div>
-                <div class="border border-gray-200 rounded-lg shadow-lg p-6">
-                    <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
-                    <p class="text-4xl font-bold mb-4">Contact Us</p>
-                    <ul class="text-gray-700 mb-6">
-                        <li class="mb-2">3+ seats</li>
-                        <li class="mb-2">Custom profile reach</li>
-                        <li class="mb-2">24/7 cloud service with expert setup</li>
-                        <li class="mb-2"><b>Priority support</b></li>
-                        <li class="mb-2">Target LinkedIn profiles in any industry</li>
-                        <li class="mb-2">Cloud-based</li>
-                    </ul>
-                    <a href="mailto:sales@brookstonemarketingr.org">
-                        <button class="px-6 py-2 bg-gradient-to-r from-blue-400 to-blue-600 hover:bg-purple-500 rounded-md font-semibold shadow-lg hover:shadow-xl transition ease-in-out flex items-center space-x-2 text-white">
-                            <span>Contact Us</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
-                    </a>
+                <img src="images/dashboard1.png" alt="Dashboard Screenshot" width="100%" class="dashboard-screenshot">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-badge">Time Saver</div>
+                        <h3>Save Time and Effort</h3>
+                        <p>Interact with thousands of LinkedIn profiles automatically. Visits, likes, and comments handled for you. Up to 6,000 actions per day.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-badge">Lead Generation</div>
+                        <h3>Generate Inbound Leads</h3>
+                        <p>Attract 100-250 high-quality leads and followers daily. Let clients come to you instead of chasing them down.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-badge">Cloud-Based</div>
+                        <h3>Always Working</h3>
+                        <p>No downloads, no computer required. Our cloud-based system is always on, always working, even when you're sleeping.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-badge">Smart Targeting</div>
+                        <h3>Smart Customization</h3>
+                        <p>Filter by keywords, country, and timing. Target your ideal audience with precision and never waste time on unqualified prospects.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="bg-gray-100 py-16" id="faq">
-        <div class="max-w-screen-xl mx-auto px-8">
-            <h2 class="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-            <div class="space-y-4">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-2">What is LeadsAutopilot Pro?</h3>
-                    <p class="text-gray-700">LeadsAutopilot Pro is a tool that helps you generate targeted, inbound leads from LinkedIn by automating engagement with profiles, posts, and comments.</p>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="section" style="background: #f8fafc;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How LeadsAutopilot Works to Bring You More Business</h2>
+                    <p>Simple, automated process that delivers results consistently.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-2">Is LeadsAutopilot Pro compliant with LinkedIn's terms of service?</h3>
-                    <p class="text-gray-700">Yes, LeadsAutopilot Pro is fully compliant with LinkedIn's terms of service. We ensure that all interactions are within LinkedIn's guidelines.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-2">Do I need to share my LinkedIn password?</h3>
-                    <p class="text-gray-700">No, you do not need to share your LinkedIn password. You can connect your LinkedIn account via our Chrome extension, which follows Google's best security practices.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-2">How many profiles can I reach with LeadsAutopilot Pro?</h3>
-                    <p class="text-gray-700">With LeadsAutopilot Pro, you can reach up to 6,000 profiles every day, which amounts to 180,000 profiles per month.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-2">Is there a free trial available?</h3>
-                    <p class="text-gray-700">Yes, we offer a 7-day free trial for LeadsAutopilot Pro. You can try the tool and see how it works for your business before committing to a subscription.</p>
-                    <br>
-                    <a href="https://whop.com/checkout/plan_xGCwOvuiCEzbh?d2c=true">
-                        <button class="px-6 py-2 bg-gradient-to-r from-blue-400 to-blue-600 hover:bg-purple-500 rounded-md font-semibold shadow-lg hover:shadow-xl transition ease-in-out flex items-center space-x-2 text-white">
-                            <span>Start Trial</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
-                    </a>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Automated Engagement</h3>
+                        <p>Our Autolikes feature with 3,000-6,000 profiles in your niche daily, fully compliant with LinkedIn's terms of service.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Profile Visits & Follows</h3>
+                        <p>A percentage visit your profile and follow you. We provide resources to boost your conversion rates.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Welcome Messages</h3>
+                        <p>Send personalized welcome messages to new connections who meet your specific criteria.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Close More Deals</h3>
+                        <p>You arrange meetings and close sales with warm, qualified prospects who are already interested.</p>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Control & Security Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>You're in Control - Always.</h2>
+                    <p>You control exactly who you interact with using advanced targeting filters. No more wasting time on unqualified prospects.</p>
+                    <img src="images/dashboard3.png" alt="Dashboard Screenshot" width="100%" class="dashboard-screenshot">
+                </div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <p>You control exactly who you interact with using advanced targeting filters</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <p>No password sharing—connect via Chrome extension with Google-approved security</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <p>Military-grade encryption protects your data and account information</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <p>Zero recorded account bans; fully compliant with LinkedIn's terms of service</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <p>24/7 support available via email and live chat when you need help</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who Is It For Section -->
+        <section class="section" style="background: #f8fafc;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Is LeadsAutopilot the Right Choice <i>For You?</i></h2>
+                    <p>Whether you're a solopreneur or managing multiple accounts</p>
+                </div>
+                <div class="audience-grid">
+                    <div class="audience-card">
+                        <h3>Sales Professionals</h3>
+                        <p>Close more deals by automatically engaging with qualified prospects. Build meaningful relationships at scale while maintaining a personal touch. Get more meetings booked with decision makers.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>Marketers</h3>
+                        <p>Grow your brand's presence and reach on LinkedIn organically. Connect with your target audience and drive engagement on your content. Build an engaged community of followers who amplify your message.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>Recruiters</h3>
+                        <p>Find and connect with qualified candidates faster than ever before. Build a pipeline of passive talent through automated outreach. Maintain relationships with potential candidates for future opportunities.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>Agencies</h3>
+                        <p>Scale your client's LinkedIn presence efficiently and effectively. Manage multiple accounts from one dashboard with team collaboration features. Track and report results with detailed analytics.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>Multi-Account Teams</h3>
+                        <p>Coordinate LinkedIn outreach across your entire organization. Maintain consistent messaging while personalizing for each team member. Share templates and best practices across the team.</p>
+                    </div>
+                </div>
+                <div class="image-placeholder" style="margin-top: 10rem;">
+                     <img src="images/dashboard2.png" alt="Multi-Seat Dashboard Screenshot" width="100%" class="dashboard-screenshot">
+                </div>
+            </div>
+        </section>
+
+        <!-- Real Followers Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Real Followers, Real Leads</h2>
+                    <p>Target your competitors' active followers and turn them into your customers</p>
+                </div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <p>Give us your competitors, we engage with their most active followers and connections</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <p>Your profile is shown to up to 6,000 qualified prospects every single day</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <p>Convert new profile visitors into new revenue streams over time with consistent exposure</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know about growing with LeadsAutopilot</p>
+                </div>
+                <div class="faq-container">
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            What does LeadsAutopilot do?
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>LeadsAutopilot grows your LinkedIn presence by automatically engaging with thousands of posts, comments, and replies in your target niche. This drives relevant traffic to your profile, increasing your followers and generating high-quality inbound leads.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            Is there a free trial?
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Due to the personalized, internal setup our team performs for each client, we do not offer a free trial. However, we stand by our service with a 100% money-back guarantee. If you're not satisfied within the first 48 hours, we will issue a full refund, no questions asked.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            How quickly will I make my money back?
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Your return on investment depends on how effectively you leverage your new followers and inbound leads. Many of our users have successfully landed new clients within the first week by engaging with the warm leads our service provides.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            Is this a course?
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>No, this is not a course. LeadsAutopilot is a "done-for-you" automated service designed to handle your LinkedIn engagement, saving you time and generating inbound leads without you needing to learn a new system.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            Does my computer need to be open for it to run?
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Nope! Our system is entirely cloud-based. It is not a browser extension and does not require you to have any window or dashboard open. Once you sign up, our system works for you 24/7, and the results start flowing in.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            Do I need to use my own account?
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>While you don't have to use your own account, we highly recommend it for the best results. If you have a personal brand or a primary business account you want to grow, using that profile will yield the most significant benefits in terms of brand awareness and lead quality compared to using a secondary account.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            Will my account get banned for this?
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Our service operates by safely engaging with your target demographic of users in a way that mirrors manual activity. The safety of your account is our top priority. We have proudly maintained a record of zero account bans and serve a roster of high-profile clients who trust us with their accounts. It is safe to use.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            Do you have any more questions?
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Our official support email address is <a href="mailto:support@leadsautopilot.com" class="review-link">support@leadsautopilot.com</a>. Whether you have questions about our services, need assistance with your account, or want to provide feedback, our team is here to help. Please allow up to 2 business days for a response.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risk-Free Trial Section -->
+        <section class="section">
+            <div class="container">
+                <div class="trial-section section">
+                    <div style="padding: 4rem 2rem;">
+                        <h2>Risk-Free Guarantee</h2>
+                        <p>Try LeadsAutopilot risk-free with our 48-hour money-back guarantee. If you're not satisfied, email support@leadsautopilot.com within 48 hours for a full refund—no questions asked.</p>
+                        <a href="https://app.leadsautopilot.com/join" class="btn-white">Get Started Risk-Free</a>
+                        <div class="satisfaction-badge">97% Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-copyright">
+                <p>&copy; 2025 LeadsAutopilot.com. All rights reserved.</p>
+            </div>
+            <div class="footer-payments">
+                <svg class="w-10 h-10" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24" aria-labelledby="pi-visa"><title id="pi-visa">Visa</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><path d="M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z" fill="#142688"></path></svg>
+                <svg class="w-10 h-10" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" width="38" height="24" role="img" aria-labelledby="pi-master"><title id="pi-master">Mastercard</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><circle fill="#EB001B" cx="15" cy="12" r="7"></circle><circle fill="#F79E1B" cx="23" cy="12" r="7"></circle><path fill="#FF5F00" d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z"></path></svg>
+                <svg class="w-10 h-10" viewBox="0 0 38 24" width="38" height="24" role="img" aria-labelledby="pi-discover" fill="none" xmlns="http://www.w3.org/2000/svg"><title id="pi-discover">Discover</title><path fill="#000" opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32z" fill="#fff"></path><path d="M3.57 7.16H2v5.5h1.57c.83 0 1.43-.2 1.96-.63.63-.52 1-1.3 1-2.11-.01-1.63-1.22-2.76-2.96-2.76zm1.26 4.14c-.34.3-.77.44-1.47.44h-.29V8.1h.29c.69 0 1.11.12 1.47.44.37.33.59.84.59 1.37 0 .53-.22 1.06-.59 1.39zm2.19-4.14h1.07v5.5H7.02v-5.5zm3.69 2.11c-.64-.24-.83-.4-.83-.69 0-.35.34-.61.8-.61.32 0 .59.13.86.45l.56-.73c-.46-.4-1.01-.61-1.62-.61-.97 0-1.72.68-1.72 1.58 0 .76.35 1.15 1.35 1.51.42.15.63.25.74.31.21.14.32.34.32.57 0 .45-.35.78-.83.78-.51 0-.92-.26-1.17-.73l-.69.67c.49.73 1.09 1.05 1.9 1.05 1.11 0 1.9-.74 1.9-1.81.02-.89-.35-1.29-1.57-1.74zm1.92.65c0 1.62 1.27 2.87 2.9 2.87.46 0 .86-.09 1.34-.32v-1.26c-.43.43-.81.6-1.29.6-1.08 0-1.85-.78-1.85-1.9 0-1.06.79-1.89 1.8-1.89.51 0 .9.18 1.34.62V7.38c-.47-.24-.86-.34-1.32-.34-1.61 0-2.92 1.28-2.92 2.88zm12.76.94l-1.47-3.7h-1.17l2.33 5.64h.58l2.37-5.64h-1.16l-1.48 3.7zm3.13 1.8h3.04v-.93h-1.97v-1.48h1.9v-.93h-1.9V8.1h1.97v-.94h-3.04v5.5zm7.29-3.87c0-1.03-.71-1.62-1.95-1.62h-1.59v5.5h1.07v-2.21h.14l1.48 2.21h1.32l-1.73-2.32c.81-.17 1.26-.72 1.26-1.56zm-2.16.91h-.31V8.03h.33c.67 0 1.03.28 1.03.82 0 .55-.36.85-1.05.85z" fill="#231F20"></path><path d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z" fill="url(#pi-paint0_linear)"></path><path opacity=".65" d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z" fill="url(#pi-paint1_linear)"></path><path d="M36.57 7.506c0-.1-.07-.15-.18-.15h-.16v.48h.12v-.19l.14.19h.14l-.16-.2c.06-.01.1-.06.1-.13zm-.2.07h-.02v-.13h.02c.06 0 .09.02.09.06 0 .05-.03.07-.09.07z" fill="#231F20"></path><path d="M36.41 7.176c-.23 0-.42.19-.42.42 0 .23.19.42.42.42.23 0 .42-.19.42-.42 0-.23-.19-.42-.42-.42zm0 .77c-.18 0-.34-.15-.34-.35 0-.19.15-.35.34-.35.18 0 .33.16.33.35 0 .19-.15.35-.33.35z" fill="#231F20"></path><path d="M37 12.984S27.09 19.873 8.976 23h26.023a2 2 0 002-1.984l.024-3.02L37 12.985z" fill="#F48120"></path><defs><linearGradient id="pi-paint0_linear" x1="21.657" y1="12.275" x2="19.632" y2="9.104" gradientUnits="userSpaceOnUse"><stop stop-color="#F89F20"></stop><stop offset=".25" stop-color="#F79A20"></stop><stop offset=".533" stop-color="#F68D20"></stop><stop offset=".62" stop-color="#F58720"></stop><stop offset=".723" stop-color="#F48120"></stop><stop offset="1" stop-color="#F37521"></stop></linearGradient><linearGradient id="pi-paint1_linear" x1="21.338" y1="12.232" x2="18.378" y2="6.446" gradientUnits="userSpaceOnUse"><stop stop-color="#F58720"></stop><stop offset=".359" stop-color="#E16F27"></stop><stop offset=".703" stop-color="#D4602C"></stop><stop offset=".982" stop-color="#D05B2E"></stop></linearGradient></defs></svg>
+                <svg class="w-10 h-10" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 165.521 105.965" xml:space="preserve" aria-labelledby="pi-apple_pay"><title id="pi-apple_pay">Apple Pay</title><path fill="#fff" d="M150.698 3.532l1.672.003c.452.003.905.008 1.36.02.793.022 1.719.065 2.583.22.75.135 1.38.34 1.984.648a6.392 6.392 0 0 1 2.804 2.807c.306.6.51 1.226.645 1.983.154.854.197 1.783.218 2.58.013.45.019.9.02 1.36.005.557.005 1.113.005 1.671v76.318c0 .558 0 1.114-.004 1.682-.002.45-.008.9-.02 1.35-.022.796-.065 1.725-.221 2.589a6.855 6.855 0 0 1-.645 1.975 6.397 6.397 0 0 1-2.808 2.807c-.6.306-1.228.511-1.971.645-.881.157-1.847.2-2.574.22-.457.01-.912.017-1.379.019-.555.004-1.113.004-1.669.004H14.801c-.55 0-1.1 0-1.66-.004a74.993 74.993 0 0 1-1.35-.018c-.744-.02-1.71-.064-2.584-.22a6.938 6.938 0 0 1-1.986-.65 6.337 6.337 0 0 1-1.622-1.18 6.355 6.355 0 0 1-1.178-1.623 6.935 6.935 0 0 1-.646-1.985c-.156-.863-.2-1.788-.22-2.578a66.088 66.088 0 0 1-.02-1.355l-.003-1.327V14.474l.002-1.325a66.7 66.7 0 0 1 .02-1.357c.022-.792.065-1.717.222-2.587a6.924 6.924 0 0 1 .646-1.981c.304-.598.7-1.144 1.18-1.623a6.386 6.386 0 0 1 1.624-1.18 6.96 6.96 0 0 1 1.98-.646c.865-.155 1.792-.198 2.586-.22.452-.012.905-.017 1.354-.02l1.677-.003h135.875z" fill-rule="nonzero"></path><g fill="#000" fill-rule="nonzero"><path d="M43.508 35.77c1.404-1.755 2.356-4.112 2.105-6.52-2.054.102-4.56 1.355-6.012 3.112-1.303 1.504-2.456 3.959-2.156 6.266 2.306.2 4.61-1.152 6.063-2.858m-2.026 21.83c-2.798-.05-4.548-2.5-6.247-5-1.95-2.85-2.747-5.6-2.797-5.75.05-.05 5.396-2.101 5.446-8.251.05-5.15-4.198-7.6-4.398-7.751 2.399-3.548 6.147-3.948 7.447-4.048-1.2.05-2.35.6-3.35 1.65-2.85 2.85-2.9 7.45-.1 10.55 1.55 1.7 3.55 2.65 5.6 2.65 1.05 0 2.1-.35 3-1 .15-.1.35-.2.5-.25s.3-.15.35-.3c.1-.15.15-.35.15-.55s0-.4-.05-.55c-.05-.2-.1-.35-.2-.5-.1-.15-.25-.25-.4-.35-.85-.5-1.8-.75-2.85-.75-1.6 0-3.2.6-4.4 1.8-.7.7-1.2 1.55-1.55 2.5-.3.95-.4 1.9-.35 2.85.15 2.6 1.35 5.05 3.4 6.8 1.7 1.45 3.7 2.25 5.85 2.25 1.05 0 2.1-.3 3.05-.95.15-.1.3-.2.4-.35.1-.15.15-.3.2-.5.05-.15.05-.35.05-.55 0-.2-.05-.4-.1-.55-.05-.15-.1-.3-.2-.4-.1-.1-.25-.2-.35-.25-.9-.5-1.85-.7-2.85-.7z"></path><path d="M78.973 32.11c7.278 0 12.347 5.017 12.347 12.321 0 7.33-5.173 12.373-12.529 12.373h-8.058V69.62h-5.822V32.11h14.062zm-8.24 19.807h6.68c5.07 0 7.954-2.729 7.954-7.46 0-4.73-2.885-7.434-7.928-7.434h-6.706v14.894zM92.764 61.847c0-4.809 3.665-7.564 10.423-7.98l7.252-.442v-2.08c0-3.04-2.001-4.704-5.562-4.704-2.938 0-5.07 1.507-5.51 3.82h-5.252c.157-4.86 4.731-8.395 10.918-8.395 6.654 0 10.995 3.483 10.995 8.89v18.663h-5.38v-4.497h-.13c-1.534 2.937-4.914 4.782-8.579 4.782-5.406 0-9.175-3.222-9.175-8.057zm17.675-2.417v-2.106l-6.472.416c-3.64.234-5.536 1.585-5.536 3.95 0 2.288 1.975 3.77 5.068 3.77 3.95 0 6.94-2.522 6.94-6.03zM120.975 79.652v-4.496c.364.051 1.247.103 1.715.103 2.573 0 4.029-1.09 4.913-3.899l.52-1.663-9.852-27.293h6.082l6.863 22.146h.13l6.862-22.146h5.927l-10.216 28.67c-2.34 6.577-5.017 8.735-10.683 8.735-.442 0-1.872-.052-2.261-.157z"></path></g></svg>
+            </div>
         </div>
-    </section>
-    <footer class="bg-gray-900 text-white py-8">
-    <div class="max-w-screen-xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center">
-        <div class="text-center md:text-left mb-4 md:mb-0">
-            <p>&copy; 2025 LeadsAutopilot.com. All rights reserved.</p>
-        </div>
-        <div class="flex space-x-4">
-            <svg class="w-10 h-10" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 165.521 105.965" xml:space="preserve" aria-labelledby="pi-apple_pay"><title id="pi-apple_pay">Apple Pay</title><path fill="#000" d="M150.698 0H14.823c-.566 0-1.133 0-1.698.003-.477.004-.953.009-1.43.022-1.039.028-2.087.09-3.113.274a10.51 10.51 0 0 0-2.958.975 9.932 9.932 0 0 0-4.35 4.35 10.463 10.463 0 0 0-.975 2.96C.113 9.611.052 10.658.024 11.696a70.22 70.22 0 0 0-.022 1.43C0 13.69 0 14.256 0 14.823v76.318c0 .567 0 1.132.002 1.699.003.476.009.953.022 1.43.028 1.036.09 2.084.275 3.11a10.46 10.46 0 0 0 .974 2.96 9.897 9.897 0 0 0 1.83 2.52 9.874 9.874 0 0 0 2.52 1.83c.947.483 1.917.79 2.96.977 1.025.183 2.073.245 3.112.273.477.011.953.017 1.43.02.565.004 1.132.004 1.698.004h135.875c.565 0 1.132 0 1.697-.004.476-.002.952-.009 1.431-.02 1.037-.028 2.085-.09 3.113-.273a10.478 10.478 0 0 0 2.958-.977 9.955 9.955 0 0 0 4.35-4.35c.483-.947.789-1.917.974-2.96.186-1.026.246-2.074.274-3.11.013-.477.02-.954.022-1.43.004-.567.004-1.132.004-1.699V14.824c0-.567 0-1.133-.004-1.699a63.067 63.067 0 0 0-.022-1.429c-.028-1.038-.088-2.085-.274-3.112a10.4 10.4 0 0 0-.974-2.96 9.94 9.94 0 0 0-4.35-4.35A10.52 10.52 0 0 0 156.939.3c-1.028-.185-2.076-.246-3.113-.274a71.417 71.417 0 0 0-1.431-.022C151.83 0 151.263 0 150.698 0z"></path><path fill="#FFF" d="M150.698 3.532l1.672.003c.452.003.905.008 1.36.02.793.022 1.719.065 2.583.22.75.135 1.38.34 1.984.648a6.392 6.392 0 0 1 2.804 2.807c.306.6.51 1.226.645 1.983.154.854.197 1.783.218 2.58.013.45.019.9.02 1.36.005.557.005 1.113.005 1.671v76.318c0 .558 0 1.114-.004 1.682-.002.45-.008.9-.02 1.35-.022.796-.065 1.725-.221 2.589a6.855 6.855 0 0 1-.645 1.975 6.397 6.397 0 0 1-2.808 2.807c-.6.306-1.228.511-1.971.645-.881.157-1.847.2-2.574.22-.457.01-.912.017-1.379.019-.555.004-1.113.004-1.669.004H14.801c-.55 0-1.1 0-1.66-.004a74.993 74.993 0 0 1-1.35-.018c-.744-.02-1.71-.064-2.584-.22a6.938 6.938 0 0 1-1.986-.65 6.337 6.337 0 0 1-1.622-1.18 6.355 6.355 0 0 1-1.178-1.623 6.935 6.935 0 0 1-.646-1.985c-.156-.863-.2-1.788-.22-2.578a66.088 66.088 0 0 1-.02-1.355l-.003-1.327V14.474l.002-1.325a66.7 66.7 0 0 1 .02-1.357c.022-.792.065-1.717.222-2.587a6.924 6.924 0 0 1 .646-1.981c.304-.598.7-1.144 1.18-1.623a6.386 6.386 0 0 1 1.624-1.18 6.96 6.96 0 0 1 1.98-.646c.865-.155 1.792-.198 2.586-.22.452-.012.905-.017 1.354-.02l1.677-.003h135.875"></path><g><g><path fill="#000" d="M43.508 35.77c1.404-1.755 2.356-4.112 2.105-6.52-2.054.102-4.56 1.355-6.012 3.112-1.303 1.504-2.456 3.959-2.156 6.266 2.306.2 4.61-1.152 6.063-2.858"></path><path fill="#000" d="M45.587 39.079c-3.35-.2-6.196 1.9-7.795 1.9-1.6 0-4.049-1.8-6.698-1.751-3.447.05-6.645 2-8.395 5.1-3.598 6.2-.95 15.4 2.55 20.45 1.699 2.5 3.747 5.25 6.445 5.151 2.55-.1 3.549-1.65 6.647-1.65 3.097 0 3.997 1.65 6.696 1.6 2.798-.05 4.548-2.5 6.247-5 1.95-2.85 2.747-5.6 2.797-5.75-.05-.05-5.396-2.101-5.446-8.251-.05-5.15 4.198-7.6 4.398-7.751-2.399-3.548-6.147-3.948-7.447-4.048"></path></g><g><path fill="#000" d="M78.973 32.11c7.278 0 12.347 5.017 12.347 12.321 0 7.33-5.173 12.373-12.529 12.373h-8.058V69.62h-5.822V32.11h14.062zm-8.24 19.807h6.68c5.07 0 7.954-2.729 7.954-7.46 0-4.73-2.885-7.434-7.928-7.434h-6.706v14.894z"></path><path fill="#000" d="M92.764 61.847c0-4.809 3.665-7.564 10.423-7.98l7.252-.442v-2.08c0-3.04-2.001-4.704-5.562-4.704-2.938 0-5.07 1.507-5.51 3.82h-5.252c.157-4.86 4.731-8.395 10.918-8.395 6.654 0 10.995 3.483 10.995 8.89v18.663h-5.38v-4.497h-.13c-1.534 2.937-4.914 4.782-8.579 4.782-5.406 0-9.175-3.222-9.175-8.057zm17.675-2.417v-2.106l-6.472.416c-3.64.234-5.536 1.585-5.536 3.95 0 2.288 1.975 3.77 5.068 3.77 3.95 0 6.94-2.522 6.94-6.03z"></path><path fill="#000" d="M120.975 79.652v-4.496c.364.051 1.247.103 1.715.103 2.573 0 4.029-1.09 4.913-3.899l.52-1.663-9.852-27.293h6.082l6.863 22.146h.13l6.862-22.146h5.927l-10.216 28.67c-2.34 6.577-5.017 8.735-10.683 8.735-.442 0-1.872-.052-2.261-.157z"></path></g></g></svg>
-            <svg class="w-10 h-10" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pi-diners_club"><title id="pi-diners_club">Diners Club</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><path d="M12 12v3.7c0 .3-.2.3-.5.2-1.9-.8-3-3.3-2.3-5.4.4-1.1 1.2-2 2.3-2.4.4-.2.5-.1.5.2V12zm2 0V8.3c0-.3 0-.3.3-.2 2.1.8 3.2 3.3 2.4 5.4-.4 1.1-1.2 2-2.3 2.4-.4.2-.4.1-.4-.2V12zm7.2-7H13c3.8 0 6.8 3.1 6.8 7s-3 7-6.8 7h8.2c3.8 0 6.8-3.1 6.8-7s-3-7-6.8-7z" fill="#3086C8"></path></svg>
-            <svg class="w-10 h-10" viewBox="0 0 38 24" width="38" height="24" role="img" aria-labelledby="pi-discover" fill="none" xmlns="http://www.w3.org/2000/svg"><title id="pi-discover">Discover</title><path fill="#000" opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32z" fill="#fff"></path><path d="M3.57 7.16H2v5.5h1.57c.83 0 1.43-.2 1.96-.63.63-.52 1-1.3 1-2.11-.01-1.63-1.22-2.76-2.96-2.76zm1.26 4.14c-.34.3-.77.44-1.47.44h-.29V8.1h.29c.69 0 1.11.12 1.47.44.37.33.59.84.59 1.37 0 .53-.22 1.06-.59 1.39zm2.19-4.14h1.07v5.5H7.02v-5.5zm3.69 2.11c-.64-.24-.83-.4-.83-.69 0-.35.34-.61.8-.61.32 0 .59.13.86.45l.56-.73c-.46-.4-1.01-.61-1.62-.61-.97 0-1.72.68-1.72 1.58 0 .76.35 1.15 1.35 1.51.42.15.63.25.74.31.21.14.32.34.32.57 0 .45-.35.78-.83.78-.51 0-.92-.26-1.17-.73l-.69.67c.49.73 1.09 1.05 1.9 1.05 1.11 0 1.9-.74 1.9-1.81.02-.89-.35-1.29-1.57-1.74zm1.92.65c0 1.62 1.27 2.87 2.9 2.87.46 0 .86-.09 1.34-.32v-1.26c-.43.43-.81.6-1.29.6-1.08 0-1.85-.78-1.85-1.9 0-1.06.79-1.89 1.8-1.89.51 0 .9.18 1.34.62V7.38c-.47-.24-.86-.34-1.32-.34-1.61 0-2.92 1.28-2.92 2.88zm12.76.94l-1.47-3.7h-1.17l2.33 5.64h.58l2.37-5.64h-1.16l-1.48 3.7zm3.13 1.8h3.04v-.93h-1.97v-1.48h1.9v-.93h-1.9V8.1h1.97v-.94h-3.04v5.5zm7.29-3.87c0-1.03-.71-1.62-1.95-1.62h-1.59v5.5h1.07v-2.21h.14l1.48 2.21h1.32l-1.73-2.32c.81-.17 1.26-.72 1.26-1.56zm-2.16.91h-.31V8.03h.33c.67 0 1.03.28 1.03.82 0 .55-.36.85-1.05.85z" fill="#231F20"></path><path d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z" fill="url(#pi-paint0_linear)"></path><path opacity=".65" d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z" fill="url(#pi-paint1_linear)"></path><path d="M36.57 7.506c0-.1-.07-.15-.18-.15h-.16v.48h.12v-.19l.14.19h.14l-.16-.2c.06-.01.1-.06.1-.13zm-.2.07h-.02v-.13h.02c.06 0 .09.02.09.06 0 .05-.03.07-.09.07z" fill="#231F20"></path><path d="M36.41 7.176c-.23 0-.42.19-.42.42 0 .23.19.42.42.42.23 0 .42-.19.42-.42 0-.23-.19-.42-.42-.42zm0 .77c-.18 0-.34-.15-.34-.35 0-.19.15-.35.34-.35.18 0 .33.16.33.35 0 .19-.15.35-.33.35z" fill="#231F20"></path><path d="M37 12.984S27.09 19.873 8.976 23h26.023a2 2 0 002-1.984l.024-3.02L37 12.985z" fill="#F48120"></path><defs><linearGradient id="pi-paint0_linear" x1="21.657" y1="12.275" x2="19.632" y2="9.104" gradientUnits="userSpaceOnUse"><stop stop-color="#F89F20"></stop><stop offset=".25" stop-color="#F79A20"></stop><stop offset=".533" stop-color="#F68D20"></stop><stop offset=".62" stop-color="#F58720"></stop><stop offset=".723" stop-color="#F48120"></stop><stop offset="1" stop-color="#F37521"></stop></linearGradient><linearGradient id="pi-paint1_linear" x1="21.338" y1="12.232" x2="18.378" y2="6.446" gradientUnits="userSpaceOnUse"><stop stop-color="#F58720"></stop><stop offset=".359" stop-color="#E16F27"></stop><stop offset=".703" stop-color="#D4602C"></stop><stop offset=".982" stop-color="#D05B2E"></stop></linearGradient></defs></svg>
-            <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24" width="38" height="24" aria-labelledby="pi-google_pay"><title id="pi-google_pay">Google Pay</title><path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000" opacity=".07"></path><path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" fill="#FFF"></path><path d="M18.093 11.976v3.2h-1.018v-7.9h2.691a2.447 2.447 0 0 1 1.747.692 2.28 2.28 0 0 1 .11 3.224l-.11.116c-.47.447-1.098.69-1.747.674l-1.673-.006zm0-3.732v2.788h1.698c.377.012.741-.135 1.005-.404a1.391 1.391 0 0 0-1.005-2.354l-1.698-.03zm6.484 1.348c.65-.03 1.286.188 1.778.613.445.43.682 1.03.65 1.649v3.334h-.969v-.766h-.049a1.93 1.93 0 0 1-1.673.931 2.17 2.17 0 0 1-1.496-.533 1.667 1.667 0 0 1-.613-1.324 1.606 1.606 0 0 1 .613-1.336 2.746 2.746 0 0 1 1.698-.515c.517-.02 1.03.093 1.49.331v-.208a1.134 1.134 0 0 0-.417-.901 1.416 1.416 0 0 0-.98-.368 1.545 1.545 0 0 0-1.319.717l-.895-.564a2.488 2.488 0 0 1 2.182-1.06zM23.29 13.52a.79.79 0 0 0 .337.662c.223.176.5.269.785.263.429-.001.84-.17 1.146-.472.305-.286.478-.685.478-1.103a2.047 2.047 0 0 0-1.324-.374 1.716 1.716 0 0 0-1.03.294.883.883 0 0 0-.392.73zm9.286-3.75l-3.39 7.79h-1.048l1.281-2.728-2.224-5.062h1.103l1.612 3.885 1.569-3.885h1.097z" fill="#5F6368"></path><path d="M13.986 11.284c0-.308-.024-.616-.073-.92h-4.29v1.747h2.451a2.096 2.096 0 0 1-.9 1.373v1.134h1.464a4.433 4.433 0 0 0 1.348-3.334z" fill="#4285F4"></path><path d="M9.629 15.721a4.352 4.352 0 0 0 3.01-1.097l-1.466-1.14a2.752 2.752 0 0 1-4.094-1.44H5.577v1.17a4.53 4.53 0 0 0 4.052 2.507z" fill="#34A853"></path><path d="M7.079 12.05a2.709 2.709 0 0 1 0-1.735v-1.17H5.577a4.505 4.505 0 0 0 0 4.075l1.502-1.17z" fill="#FBBC04"></path><path d="M9.629 8.44a2.452 2.452 0 0 1 1.74.68l1.3-1.293a4.37 4.37 0 0 0-3.065-1.183 4.53 4.53 0 0 0-4.027 2.5l1.502 1.171a2.715 2.715 0 0 1 2.55-1.875z" fill="#EA4335"></path></svg>
-            <svg class="w-10 h-10" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24" aria-labelledby="pi-master"><title id="pi-master">Mastercard</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><circle fill="#EB001B" cx="15" cy="12" r="7"></circle><circle fill="#F79E1B" cx="23" cy="12" r="7"></circle><path fill="#FF5F00" d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z"></path></svg>
-            <svg class="w-10 h-10" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" width="38" height="24" role="img" aria-labelledby="pi-paypal"><title id="pi-paypal">PayPal</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><path fill="#003087" d="M23.9 8.3c.2-1 0-1.7-.6-2.3-.6-.7-1.7-1-3.1-1h-4.1c-.3 0-.5.2-.6.5L14 15.6c0 .2.1.4.3.4H17l.4-3.4 1.8-2.2 4.7-2.1z"></path><path fill="#3086C8" d="M23.9 8.3l-.2.2c-.5 2.8-2.2 3.8-4.6 3.8H18c-.3 0-.5.2-.6.5l-.6 3.9-.2 1c0 .2.1.4.3.4H19c.3 0 .5-.2.5-.4v-.1l.4-2.4v-.1c0-.2.3-.4.5-.4h.3c2.1 0 3.7-.8 4.1-3.2.2-1 .1-1.8-.4-2.4-.1-.5-.3-.7-.5-.8z"></path><path fill="#012169" d="M23.3 8.1c-.1-.1-.2-.1-.3-.1-.1 0-.2 0-.3-.1-.3-.1-.7-.1-1.1-.1h-3c-.1 0-.2 0-.2.1-.2.1-.3.2-.3.4l-.7 4.4v.1c0-.3.3-.5.6-.5h1.3c2.5 0 4.1-1 4.6-3.8v-.2c-.1-.1-.3-.2-.5-.2h-.1z"></path></svg>
-            <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24" width="38" height="24" aria-labelledby="pi-shopify_pay"><title id="pi-shopify_pay">Shop Pay</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000"></path><path d="M35.889 0C37.05 0 38 .982 38 2.182v19.636c0 1.2-.95 2.182-2.111 2.182H2.11C.95 24 0 23.018 0 21.818V2.182C0 .982.95 0 2.111 0H35.89z" fill="#5A31F4"></path><path d="M9.35 11.368c-1.017-.223-1.47-.31-1.47-.705 0-.372.306-.558.92-.558.54 0 .934.238 1.225.704a.079.079 0 00.104.03l1.146-.584a.082.082 0 00.032-.114c-.475-.831-1.353-1.286-2.51-1.286-1.52 0-2.464.755-2.464 1.956 0 1.275 1.15 1.597 2.17 1.82 1.02.222 1.474.31 1.474.705 0 .396-.332.582-.993.582-.612 0-1.065-.282-1.34-.83a.08.08 0 00-.107-.035l-1.143.57a.083.083 0 00-.036.111c.454.92 1.384 1.437 2.627 1.437 1.583 0 2.539-.742 2.539-1.98s-1.155-1.598-2.173-1.82v-.003zM15.49 8.855c-.65 0-1.224.232-1.636.646a.04.04 0 01-.069-.03v-2.64a.08.08 0 00-.08-.081H12.27a.08.08 0 00-.08.082v8.194a.08.08 0 00.08.082h1.433a.08.08 0 00.081-.082v-3.594c0-.695.528-1.227 1.239-1.227.71 0 1.226.521 1.226 1.227v3.594a.08.08 0 00.081.082h1.433a.08.08 0 00.081-.082v-3.594c0-1.51-.981-2.577-2.355-2.577zM20.753 8.62c-.778 0-1.507.24-2.03.588a.082.082 0 00-.027.109l.632 1.088a.08.08 0 00.11.03 2.5 2.5 0 011.318-.366c1.25 0 2.17.891 2.17 2.068 0 1.003-.736 1.745-1.669 1.745-.76 0-1.288-.446-1.288-1.077 0-.361.152-.657.548-.866a.08.08 0 00.032-.113l-.596-1.018a.08.08 0 00-.098-.035c-.799.299-1.359 1.018-1.359 1.984 0 1.46 1.152 2.55 2.76 2.55 1.877 0 3.227-1.313 3.227-3.195 0-2.018-1.57-3.492-3.73-3.492zM28.675 8.843c-.724 0-1.373.27-1.845.746-.026.027-.069.007-.069-.029v-.572a.08.08 0 00-.08-.082h-1.397a.08.08 0 00-.08.082v8.182a.08.08 0 00.08.081h1.433a.08.08 0 00.081-.081v-2.683c0-.036.043-.054.069-.03a2.6 2.6 0 001.808.7c1.682 0 2.993-1.373 2.993-3.157s-1.313-3.157-2.993-3.157zm-.271 4.929c-.956 0-1.681-.768-1.681-1.783s.723-1.783 1.681-1.783c.958 0 1.68.755 1.68 1.783 0 1.027-.713 1.783-1.681 1.783h.001z" fill="#fff"></path></svg>
-            <svg class="w-10 h-10" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24" aria-labelledby="pi-visa"><title id="pi-visa">Visa</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><path d="M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z" fill="#142688"></path></svg>
-        </div>
+    </footer>
+
+    <!-- Floating Action Ribbon -->
+    <div class="floating-ribbon">
+        <a href="https://app.leadsautopilot.com/join" class="ribbon-signup-btn">Get Started Risk-Free</a>
+        <a href="mailto:support@leadsautopilot.com" class="ribbon-support-link">Contact Support</a>
     </div>
-</footer>
+
     <script>
-        $(document).ready(function() {
-            $('.fade-up').first().addClass('visible');
-            $(window).on('scroll', function() {
-                $('.fade-up').each(function() {
-                    var elementTop = $(this).offset().top;
-                    var windowBottom = $(window).scrollTop() + $(window).height();
-                    if (elementTop < windowBottom - 20) {
-                        $(this).addClass('visible');
-                    }
-                });
-            });
-
-            let likeCount = 12928;
-            function addTerminalText() {
-                const terminalContent = $('#terminal-content');
-                const newText = $('<div class="terminal-text">').text(`Sent like #${likeCount}`);
-                terminalContent.append(newText);
-                setTimeout(() => newText.addClass('visible'), 10);
-                likeCount++;
-                if (terminalContent.children().length > 15) {
-                    terminalContent.children().first().remove();
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
-                setTimeout(addTerminalText, Math.random() * (250 - 150) + 150);
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
             }
-            addTerminalText();
         });
     </script>
 </body>
-</html>
+</html> 
