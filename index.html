@@ -1092,6 +1092,33 @@
     </div>
 
     <script>
+        // Function to get and forward URL parameters
+        function getForwardingUrl(baseUrl) {
+            const currentParams = new URLSearchParams(window.location.search);
+            if (currentParams.toString()) {
+                return `${baseUrl}${baseUrl.includes('?') ? '&' : '?'}${currentParams.toString()}`;
+            }
+            return baseUrl;
+        }
+
+        // Update all relevant links when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update login links
+            document.querySelectorAll('a[href="https://app.leadsautopilot.com/login"]').forEach(link => {
+                link.href = getForwardingUrl('https://app.leadsautopilot.com/login');
+            });
+
+            // Update signup/join links
+            document.querySelectorAll('a[href="https://app.leadsautopilot.com/join"]').forEach(link => {
+                link.href = getForwardingUrl('https://app.leadsautopilot.com/join');
+            });
+
+            // Update Whop links
+            document.querySelectorAll('a[href="https://whop.com/leadsautopilot"]').forEach(link => {
+                link.href = getForwardingUrl('https://whop.com/leadsautopilot');
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
